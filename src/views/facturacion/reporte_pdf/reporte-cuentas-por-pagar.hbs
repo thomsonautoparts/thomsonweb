@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de cuentas por pagar</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <main>
+        <h1 class="text-center text-dark">{{titulo}}</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Fecha estimada</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Comentario</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each cuentas}}
+                        <tr>
+                            <td class="text-center h6" style="font-size: 11px;">{{FechaEstimada}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Comentario}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Total}}</td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="text-danger text-end" colspan="2">Total</td>
+                            <td class="text-center" style="font-size: 15px;">{{total}}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+        </div>
+    </main>
+    <script>
+        window.print()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/facturacion-forms.css">
+      <link rel="stylesheet" href="/css/select.css" />
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="/Facturacion">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="150px" height="30px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facturación</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="nav-link" href="/facturacion/nueva-factura">Nueva-factura</a></li>
+                                <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/por-cobrar">Por cobrar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cobradas">Cobradas</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ventas">Ventas</a></li> <!--Todas -->
+                                        <li><a class="nav-link" href="/facturacion/anular-factura">Anular</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ordenes-compra">Orden de compra</a></li> <!--Pedidos de los clientes-->
+                                        <li><a class="nav-link" href="/facturacion/nueva-cotizacion">Cotización</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/ver-cotizaciones">Ver cotizaciones</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/libro-contable">Libro contable</a></li> <!--Realizar cotizaciones sin afectar stock-->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Cobranza</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/cobranza">
+                                    <p class="name_product nav-link">Cobranza</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/devolucion">
+                                    <p class="name_product nav-link">Realizar Devolución</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todas-devoluciones">
+                                    <p class="name_product nav-link">Devoluciones</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todos-recibos">
+                                    <p class="name_product nav-link">Recibos de pago</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/reporte-cxc">
+                                    <p class="name_product nav-link">Reporte de cuentas por cobrar</p>
+                                </a>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inventario</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Crear Artículo</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/stock">
+                                    <p class="name_product nav-link">Editar Artículo</p>
+                                </a>
+                                      <a class=" dropdown-item text-light" href="/facturacion/registrar-garantias">
+                                    <p class="name_product nav-link">Registrar garantías</p>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/ver-garantias">
+                                    <p class="name_product nav-link">Ver garantías</p>
+                                </a>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/estado-inventario">
+                                    <p class="name_product nav-link">Estado de inventario</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-ajustes">
+                                    <p class="name_product nav-link">Reporte de movimientos</p>
+                                </a>
+                               <a class=" dropdown-item text-light" href="/facturacion/reporte-de-articulos">
+                                    <p class="name_product nav-link">Reporte de articulos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/cambio-masivo-costo">
+                                    <p class="name_product nav-link">Cambio masivo de costos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/reporte-stock">
+                                    <p class="name_product nav-link">Reporte de stock</p>
+                                </a>
+                                  <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Ajuste de inventario</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/descargar-stock">Descargar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cargar-stock">Cargar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+                                <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class=" dropdown-item text-light" href="/facturacion/crear-proveedor">
+                                        <p class="name_product nav-link">Crear</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/editar-proveedor">
+                                        <p class="name_product nav-link">Editar</p>
+                                    </a>
+                                        <a class="dropdown-item text-light" href="/facturacion/realizar-ordenes">
+                                        <p class="name_product nav-link">Realizar orden</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/ordenes-proveedor">
+                                        <p class="name_product nav-link">Lista de ordenes</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/reporte-de-proveedores">
+                                        <p class="name_product nav-link">Reporte de proveedores</p>
+                                    </a>
+                                </ul>
+                            </li>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                            <a class=" dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                <p class="name_product nav-link">Registrar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/clientes">
+                                <p class="name_product nav-link">Editar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/aprobar-usuarios">
+                                <p class="name_product nav-link">Aprobar o rechazar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/pausar-activar-cliente">
+                                <p class="name_product nav-link">Pausar o activar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reporte-cliente">
+                                <p class="name_product nav-link">Reportes</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reportes-precio">
+                                <p class="name_product nav-link">Lista de precios</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/solicitudes-recuperacion-contrasena">
+                                <p class="name_product nav-link">Solicitudes de recuperación</p>
+                            </a>
+                        </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Vendedor</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/vendedores">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/reporte-vendedores">
+                                    <p class="name_product nav-link">Reportes</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-vendedor">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Transporte</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                               <a class=" dropdown-item text-light" href="/facturacion/registrar-transporte">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/transportes">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/activar-inactivar-transporte">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar perfil</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/usuarios">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-usuario">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Comisión</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/comision/por-cancelar">
+                                    <p class="name_product nav-link">Por cancelar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/comision/canceladas">
+                                    <p class="name_product nav-link">Canceladas</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/administracion">
+                                    <p class="name_product nav-link">Libro de entradas y salidas</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/cuentas-por-pagar">
+                                    <p class="name_product nav-link">Cuentas por pagar</p>
+                                </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/agenda">Agenda</a>
+                        </li>
+                        
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+
+                    </ul>
+                       <ul class="navbar-nav ml-0 mr-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                    <button class="btn btn-outline-success" type="button">
+                                        Cerrar sesión
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+  </header>
+    <main id="contenido">
+      <div hidden id="spinner"></div>
+        <!--Forms-->
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md" id="message">
+
+                </div>
+
+                {{#each errors}}
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                {{/each}}
+
+                {{#each registrado}}
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                {{/each}}
+
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header ">
+                            <h4 class="text-dark mt-2 text-center">Factura para la orden <strong id="ordenNumero">{{ordenNumero}}</strong></h4>
+                        </div>
+                        <form class="form-group" id="form-factura">
+                            <div class="card-body bg-green2 ">
+                                <div class="row">
+                                    <div class="col-md-6 input-group-sm">
+                                        <lable class="text-dark">Fecha de facturación</lable>
+                                        <input type="date" name="date" id="date" value="{{date}}" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 input-group-sm">
+                                        <label for="" class="text-dark">Cliente</label>
+                                        <input type="text" class="form-control" readonly id="Cliente" value="{{Cliente}}">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Tipo de documento</label>
+                                        <input type="text" name="DocumentoTipo" readonly id="DocumentoTipo"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Numero de documento</label>
+                                        <input type="text" name="Documento" id="Documento" readonly
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Direccion fiscal</label>
+                                        <input type="text" name="Direccion" id="Direccion" readonly
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Telefono celular</label>
+                                        <input type="text" name="Telefono" id="Celular" readonly class="form-control">
+                                    </div>
+                                    <div class="col-md-6 input-group-sm">
+                                        <label for="" class="text-dark">Fecha de vencimiento</label>
+                                        <input type="date" name="Vencimiento" id="Vencimiento" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 input-group-sm">
+                                        <label for="" class="text-dark">Fecha de vencimiento por dias</label>
+                                        <select name="Vencimiento2" class="form-control" id="Vencimiento2">
+                                            <option value="0">--Seleccione días--</option>
+                                            <option value="5">5 días</option>
+                                            <option value="10">10 días</option>
+                                            <option value="15">15 días</option>
+                                            <option value="30">30 días</option> 
+                                            <option value="30">60 días</option> 
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <label for="" class="text-dark input-group-sm">Agregar nota:</label>
+                                    <div class="col-md">
+                                        <textarea name="Nota" id="Nota" cols="180" class="form-control"
+                                            rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Vendedor</label>
+                                        <input type="text" id="Vendedor" class="form-control" readonly value="{{Vendedor}}">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Codigo vendedor</label>
+                                        <input type="text" name="CodigoVendedor" readonly id="CodigoVendedor"
+                                        class="form-control">
+                                    </div>
+                                    <div class="col-md-2 input-group-sm">
+                                        <label for="" class="text-dark">Documento vendedor</label>
+                                        <input type="text" name="DocumentoVendedor" readonly id="DocumentoVendedor"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-2 input-group-sm">
+                                        <label for="" class="text-dark">Zona vendedor</label>
+                                        <input type="text" name="ZonaVendedor" readonly id="ZonaVendedor"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-2 input-group-sm">
+                                        <label for="" class="text-dark">Porcentaje</label>
+                                        <input type="number" name="Porcentaje" step="any" min="1" id="Porcentaje"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Transporte:</label>
+                                        <select name="Transporte" id="Transporte" class="form-control js-exam">
+                                            <option value="0">--Seleccione una empresa de Transporte--</option>
+                                            {{#each transporte}}
+                                            <option value="{{Username}}">{{Username}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Empresa</label>
+                                        <input type="text" readonly class="form-control" id="EmpresaTransporte">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Vehiculo</label>
+                                        <input type="text" readonly class="form-control" id="VehiculoTransporte">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Placa</label>
+                                        <input type="text" readonly class="form-control" id="PlacaTransporte">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <p class="h6 text-light text-end">Cantidad total solicitada: <span class="text-light" id="cantidadSolicitada"></span></p>
+                        <p class="h6 text-light text-end">Cantidad solicitada fuera de stock: <span class="text-danger" id="fueraStock"></span></p>
+                        <p class="h6 text-light text-end">Cantidad a atender: <span class="text-success" id="cantidadAtendible"></span></p>
+                        <p class="h6 text-light text-end">Precio total solicitado: <span class="text-success" id="precioTotalSolicitado"></span></p>
+                        <p class="h6 text-light text-end">Precio total Atendible: <span class="text-success" id="precioTotalAtendible"></span></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped table-hover table-sm">
+                                <thead class="">
+                                    <tr>
+                                        <th style="font-size: 11px;">Codigo</th>
+                                        <th style="font-size: 11px;">Producto</th>
+                                        <th style="font-size: 11px;">Descripcion</th>
+                                        <th style="font-size: 11px;">Posición</th>
+                                        <th style="font-size: 11px;">Cantidad solicitada</th>
+                                        <th style="font-size: 11px;">Cantidad en stock</th>
+                                        <th style="font-size: 11px;">Cantidad atendible</th>
+                                        <th style="font-size: 11px;">Precio unitario</th>
+                                        <th style="font-size: 11px;">Precio Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyTabla">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="mb-5 text-end">
+                        <button type="submit" class="btn btn-warning text-dark" id="guardarFactura">Generar factura</button>
+                        <p class="text-muted">Unicamente se generará la factura de los productos que tienen cantidad atendible mayor a cero</p>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/js/facturacion/factura-orden.js"></script>
+    <script>
+        const d = document,
+  formDetalle = d.getElementById("formDetalle"),
+  precioUnidad = d.getElementById("precioUnidad"),
+  precioTotal = d.getElementById("precioTotal"),
+  precio = d.getElementById("Precio"),
+  TipoPrecio = d.getElementById("TipoPrecio"),
+  Cantidad = d.getElementById("Cantidad"),
+  Cantidad2 = d.getElementById("Cantidad2"),
+  Homologo = d.getElementById("Homologo"),
+  Codigo = d.getElementById("Codigo"),
+  Cliente = d.getElementById("Cliente"),
+  Documento = d.getElementById("Documento"),
+  DocumentoTipo = d.getElementById("DocumentoTipo"),
+  Direccion = d.getElementById("Direccion"),
+  bodyTabla = d.getElementById("bodyTabla"),
+  botonGuadar = d.getElementById("guardarFactura"),
+  formFactura = d.getElementById("form-factura"),
+  vencimiento = d.getElementById("Vencimiento"),
+  Vencimiento2 = d.getElementById("Vencimiento2"),
+  Vendedor = d.getElementById("Vendedor"),
+  CodigoVendedor = d.getElementById("CodigoVendedor"),
+  DocumentoVendedor = d.getElementById("DocumentoVendedor"),
+  ZonaVendedor = d.getElementById("ZonaVendedor"),
+  formCantidad = d.getElementById("formCantidad"),
+  Porcentaje = d.getElementById("Porcentaje"),
+  celular = d.getElementById("Celular"),
+  Modelo = d.getElementById("Modelo"),
+  Posicion = d.getElementById("Posicion"),
+  $Transporte = d.getElementById("Transporte"),
+  $ordenNumero = d.getElementById("ordenNumero",),
+  $TransporteEmpresa = d.getElementById("EmpresaTransporte"),
+  $VehiculoTransporte = d.getElementById("VehiculoTransporte"),
+  $PlacaTransporte = d.getElementById("PlacaTransporte"),
+  Nota = d.getElementById("Nota");
+  const $spinner = d.getElementById("spinner")
+  let TipoPrecioGeneral = ""
+
+  let date = d.getElementById("date").value
+  let cantidadTotal = 0,
+  PrecioTotal = 0;
+  let PrecioTotalAtendible = 0
+
+
+//Select
+$(document).ready(function () {
+  $(".js-exam").select2();
+})
+
+//fetch para solicitar info de la ordenn 
+$spinner.removeAttribute("hidden")
+fetch(`/info-orden-facturar/${$ordenNumero.textContent}`, {
+    method: "POST",
+})
+    .then((response) => {
+        return response.json() 
+    })
+    .then((respuesta) => {
+        d.getElementById("cantidadSolicitada").textContent = respuesta.CantidadTotalSolicitada
+        d.getElementById("fueraStock").textContent = respuesta.CantidadSolicitadaFueraStock
+        d.getElementById("cantidadAtendible").textContent = respuesta.CantidadAtender
+        d.getElementById("precioTotalSolicitado").textContent = respuesta.PrecioTotal
+        
+        for(i=0; i< respuesta.orden.length; i++){
+            PrecioTotalAtendible = (+PrecioTotalAtendible + +respuesta.orden[i].PrecioTotal).toFixed(2)
+            let tr = `
+                <tr>
+                    <td style="font-size: 10px">${respuesta.orden[i].CodigoT}</td>
+                    <td style="font-size: 10px">${respuesta.orden[i].TipoProducto}</td>
+                    <td style="font-size: 10px">${respuesta.orden[i].Descripcion}</td>
+                    <td style="font-size: 10px">${respuesta.orden[i].Posicion}</td>
+                    <td style="font-size: 10px">${respuesta.orden[i].CantidadSolicitada}</td>
+                    <td style="font-size: 10px">${respuesta.orden[i].CantidadStock}</td>
+                    <td><input type="number" class="form-control" style="font-size: 10px" data-tipo="atendible"  min="0" max="${respuesta.orden[i].CantidadStock}" value="${respuesta.orden[i].CantidadAtendible}"></td>
+                    <td style="font-size: 10px">${respuesta.orden[i].PrecioUnidad}</td>
+                    <td style="font-size: 10px" data-valor="${respuesta.orden[i].PrecioTotal}">${respuesta.orden[i].PrecioTotal}</td>
+                </tr>
+            `
+            bodyTabla.innerHTML += tr
+        }
+        d.getElementById("precioTotalAtendible").textContent = PrecioTotalAtendible
+    })
+
+d.addEventListener("change", e=> {
+    if(e.target.getAttribute("data-tipo") == "atendible"){
+        let fila = e.target.parentElement.parentElement
+        fila.children[8].textContent = (+fila.children[7].textContent * +e.target.value).toFixed(2) 
+        PrecioTotalAtendible = (+PrecioTotalAtendible - + fila.children[8].getAttribute("data-valor")).toFixed(2)
+        PrecioTotalAtendible = (+PrecioTotalAtendible + +fila.children[8].textContent).toFixed(2)
+        fila.children[8].setAttribute("data-valor",fila.children[8].textContent )
+        d.getElementById("precioTotalAtendible").textContent = PrecioTotalAtendible
+
+    }   
+})
+      
+
+// PostFect recibir datos de nodejs sobre los productos y los clientes
+
+fetch("/facturacion/nueva-factura", {
+  method: "POST",
+})
+  .then((response) => {
+    return response.json();
+  })
+  .then((respuesta) => {
+    //Llenando datos de los inputs cliente
+      for (i = 0; i < respuesta[0].length; i++) {
+        if (respuesta[0][i].Empresa == Cliente.value) {
+          DocumentoTipo.value = "RIF";
+
+          Documento.value = respuesta[0][i].Rif;
+
+          Direccion.value = respuesta[0][i].Direccion;
+
+          Vendedor.value = respuesta[0][i].Vendedor
+          TipoPrecioGeneral = respuesta[0][i].TipoPrecio
+          
+          Vendedor.innerHTML = `
+            <option value="${Vendedor.value}" selected>${Vendedor.value}<option>
+
+          `
+          for(x = 0; x < respuesta[3].length; x++){
+            if (respuesta[3][x].Username == Vendedor.value) {
+              if(respuesta[3][x].Estado == "Inactivo"){
+                d.getElementById("message").innerHTML += `
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  El vendedor seleccionado se encuentra inactivo. Se necesita activar para poder usarlo.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>`
+                window.scrollTo(0,0)
+                CodigoVendedor.value = ""
+                DocumentoVendedor.value = ""
+                ZonaVendedor.value = ""
+              }else{
+                Porcentaje.value = respuesta[3][x].Porcentaje;
+                CodigoVendedor.value = respuesta[3][x].Codigo;
+                DocumentoVendedor.value =  respuesta[3][x].Cedula;
+                ZonaVendedor.value = respuesta[3][x].Zona;
+              }
+            }else{
+              let options = `
+              <option value="${respuesta[3][x].Username}">${respuesta[3][x].Username}</option>
+            `
+            Vendedor.innerHTML += options
+            }
+          }
+          celular.value = respuesta[0][i].Celular;
+       
+        }
+        $spinner.setAttribute('hidden',"")
+
+      }
+
+    Vendedor.onchange = () => {
+      for (x = 0; x < respuesta[3].length; x++) {
+        if (respuesta[3][x].Username == Vendedor.value) {
+          if(respuesta[3][x].Estado == "Inactivo"){
+            d.getElementById("message").innerHTML += `
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              El vendedor seleccionado se encuentra inactivo. Se necesita activar para poder usarlo.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`
+            window.scrollTo(0,0)
+            CodigoVendedor.value = ""
+            DocumentoVendedor.value = ""
+            ZonaVendedor.value = ""
+          }else{
+            Porcentaje.value = respuesta[3][x].Porcentaje;
+            CodigoVendedor.value = respuesta[3][x].Codigo;
+            DocumentoVendedor.value =  respuesta[3][x].Cedula;
+            ZonaVendedor.value = respuesta[3][x].Zona;
+          }
+        }
+      }
+    };
+    //llenando datos de transporte
+    $Transporte.onchange = () =>{
+      for (i = 0; i< respuesta[4].length; i++){
+        if(respuesta[4][i].Username == $Transporte.value){
+          if(respuesta[4][i].Estado == "Inactivo"){
+            d.getElementById("message").innerHTML += `
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              El transportista seleccionado se encuentra inactivo. Se necesita activar para poder usarlo.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`
+            window.scrollTo(0,0)
+            $TransporteEmpresa.value = ""
+            $VehiculoTransporte.value = ""
+            $PlacaTransporte.value = ""
+
+
+          }else{
+            $TransporteEmpresa.value = respuesta[4][i].Empresa 
+            $VehiculoTransporte.value = respuesta[4][i].Vehiculo
+            $PlacaTransporte.value = respuesta[4][i].Placa
+          }
+        }
+      }
+    } 
+ 
+  });
+
+//Post para enviar datos de la factura al server
+const envioFactura = async (data) => {
+  return await fetch(`/facturacion/nueva-factura-orden/${$ordenNumero.textContent}`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json; charset=utf-8",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then( async (json) => {
+      if (json[0].ok) {
+        d.getElementById("message").innerHTML = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            ${json[0].ok}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              `;
+              bodyTabla.innerHTML = ``
+              $('.js-exam').val(null).trigger('change')
+              window.scrollTo(0,0)
+              await window.open(`/model-print/${json[1].Factura}`, "Impresion", "width=612, heigh=792");
+              location.href = '/facturacion/ordenes-compra'
+      } else {
+        for (i = 0; i < json.length; i++) {
+          d.getElementById("message").innerHTML = `
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                ${json[i].text}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                `;
+        }
+        window.scrollTo(0,0)
+        $spinner.setAttribute('hidden',"")
+      }
+      return json;
+    });
+};
+
+//enviar informacion a node
+botonGuadar.onclick = async (e) => {
+  e.preventDefault();
+
+  let errors =[]
+
+  if($Transporte.value == 0){
+    d.getElementById("message").innerHTML += `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      El campo "Transporte" no puede estar vacio
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+
+    errors.push(1)
+  }
+
+  if(Cliente.value == 0 ){
+
+    d.getElementById("message").innerHTML += `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      El campo "Selecciona un cliente" no puede estar vacio
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+
+    errors.push(1)
+  }
+  if(Vendedor.value == 0 ){
+    d.getElementById("message").innerHTML += `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      El campo "Vendedor" no puede estar vacio
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+
+    errors.push(1)
+  }
+  if(!Porcentaje.value){
+
+    d.getElementById("message").innerHTML += `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      El campo "Porcentaje" no puede estar vacio
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+
+    errors.push(1)
+  }
+  if(!vencimiento.value && Vencimiento2.value == 0){
+    d.getElementById("message").innerHTML += `
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      El campo "Fecha de vencimiento" no puede estar vacio
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+
+    errors.push(1)
+  }
+  if(errors.length > 0){
+    window.scrollTo(0,0)
+    return
+  }else{
+    if(d.getElementById("cantidadAtendible").textContent == 0){
+      d.getElementById("message").innerHTML += `
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        La cantidad de productos atendible es igual a cero.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`
+
+    }else{
+
+      e.preventDefault();
+      let Productos = []
+      let CantidadTotal = 0
+      let PrecioTotal = 0
+      let GananciasVendedor
+      for(i=0; i< bodyTabla.children.length; i++){
+        if(bodyTabla.children[i].children[6].firstElementChild.value > 0){
+          let producto = {
+            Codigo: bodyTabla.children[i].children[0].textContent,
+            Producto: bodyTabla.children[i].children[1].textContent,
+            Modelo: bodyTabla.children[i].children[2].textContent+" "+bodyTabla.children[i].children[3].textContent,
+            Cantidad: bodyTabla.children[i].children[6].firstElementChild.value,
+            precioUnidad: bodyTabla.children[i].children[7].textContent,
+            precioTotal: bodyTabla.children[i].children[8].textContent,
+            precioTotal2: bodyTabla.children[i].children[8].textContent,
+          }
+          CantidadTotal += +producto.Cantidad
+          PrecioTotal = (+PrecioTotal + +producto.precioTotal).toFixed(2)
+          Productos.push(producto)
+        }
+      }
+      GananciasVendedor =((+Porcentaje.value / 100) * +PrecioTotal).toFixed(2);
+      const Factura = {
+        Cliente: Cliente.value,
+        DocumentoTipo: "Rif",
+        Documento: Documento.value,
+        Direccion: Direccion.value,
+        Productos: Productos,
+        CantidadTotal: CantidadTotal,
+        PrecioTotal: PrecioTotal,
+        Vencimiento: vencimiento.value,
+        Vencimiento2: Vencimiento2.value,
+        Celular: celular.value,
+        Chofer: $Transporte.value,
+        EmpresaTransporte: $TransporteEmpresa.value,
+        date: date,
+        Vendedor: Vendedor.value,
+        DocumentoVendedor: DocumentoVendedor.value,
+        Codigo: CodigoVendedor.value,
+        Zona: ZonaVendedor.value,
+        Porcentaje: Porcentaje.value,
+        PendienteAPagar: PrecioTotal,
+        GananciasVendedor: GananciasVendedor,
+        Nota: Nota.value,
+        TipoPrecio : TipoPrecioGeneral,
+      };
+      $spinner.removeAttribute('hidden')  
+      envioFactura(Factura);
+      
+    }
+  }
+  };
+
+
+bodyTabla.innerHTML = ``;
+
+botonGuadar.disable = true;
+
+document.addEventListener("keydown", e => {
+    if(e.keyCode == 120 ){
+        window.open('/facturacion/acceso-directo-stock', 'Stock', "width=1400, heigh=100%")
+    }
+})
+    </script>
+<footer class="footer" style="background-color: rgba(41, 41, 41, 0.99);">
+    <div class="container-fluid text-center mt-2">
+        <span class="text-muted">SISTEMA ADMINISTRATIVO THOMSON</span>
+    </div>
+</footer>
+</body>
+</html>

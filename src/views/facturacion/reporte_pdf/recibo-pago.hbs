@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="shortcut icon" href="/css/assets/logo.png" />
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid mt-2 mx-auto ">
+        <div class="container-fluid">
+            <div class="row bg-light">
+                <div class="col-sm">
+                    <img src="/css/assets/logo.png" alt="" class="img-fluid" width="250px" height="50px">
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col-sm text-center">
+                    {{#if factura.Anulada}}
+                        <h4 class="text-dark mt-2">RECIBO DE PAGO #{{factura.Recibo}} <span class="text-danger">(ANULADA)</span></h2>
+                    {{else}}
+                        <h4 class="text-dark">RECIBO DE PAGO #{{factura.Recibo}}</h2>
+                    {{/if }}
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col-sn">
+                    <p class="text-dark text-end h6 ">Fecha: {{factura.Fecha}} <strong id="date"></strong></p>
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col-sm">
+                    <p class="h6 text-dark">Nombre o razón social: {{factura.Cliente}} <span id="cliente" class="h6"></span></p>
+                    <p class="h6 text-dark">RIF/C.I.: {{factura.Documento}} <span id="documento" class="h6"></span></p>
+                    <p class="h6 text-dark">Celular/Teléfono: {{factura.Celular}} <span id="celular" class="h6"></span></p>
+                    <p class="h6 text-dark">Direccion: {{factura.Direccion}} <span id="direccion" class="h6"></span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead class="border">
+                            <tr>
+                                <th class="h6 text-center border border-dark">Descripción</th>
+                                <th class="h6 text-center border border-dark">Modalidad</th>
+                                <th class="h6 text-center border border-dark">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenido-table">
+                            {{#each factura.Facturas}}
+                            <tr>
+                                <td class="h6 text-center">{{Comentario}}</td>
+                                <td class="h6 text-center">{{Modalidad}}</td>
+                                <td class="h6 text-center">{{Monto}}</td>
+                            </tr>
+                            {{/each}}
+                            <tr>    
+                                <td colspan="2" class="h5 text-danger text-end">Total:</td>
+                                <td class="text-dark h6 text-center">{{totalPagado}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                <div class="row mt-5 fixed-bottom mb-5">
+                    <div class="col-sm-6 mt-5">
+                        <p class="h3 text-start text-dark ml-2" id="Nota">Por pagar: <span class="text-danger">{{factura.PendienteAPagar}}</span></p>
+                        <p class="h6 text-start text-dark mt-2">{{factura.Comentario2}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5" id="footer">
+                <div class="row">
+                    <div class="col-sm border border-dark">
+                        
+                    </div>
+                </div>
+            </div>
+    </div>
+        <script>
+            const d = document,
+            $contenidoTable = d.getElementById("contenido-table")
+
+            if(+$contenidoTable.clientHeight < 500) {
+                d.getElementById("footer").classList.add("fixed-bottom")
+            }
+
+            window.print()
+        </script>
+</body>
+
+</html>

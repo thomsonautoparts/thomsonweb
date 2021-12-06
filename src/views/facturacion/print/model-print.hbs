@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="shortcut icon" href="/css/assets/logo.png" />
+</head>
+<body class="bg-light">
+    
+    <div class="container-fluid mt-2 mx-auto ">
+        <div class="container-fluid">
+            <div class="row bg-light">
+                <div class="col-sm">
+                    <img src="/css/assets/logo.png" alt="" width="150px" height="30px">
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col-sm text-center">
+                {{#if factura.Anulada}}
+                    <h4 class="text-dark">NOTA DE ENTREGA <span class="text-danger">(ANULADA)</span> </h2>
+                {{else}}
+                    <h4 class="text-dark">NOTA DE ENTREGA</h2>
+                {{/if }}
+                        <p class="text-dark text-center h6" id="factura"> {{factura.Factura}} <strong></strong></p>
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col-sn">
+                    <p class="text-dark text-end h6 ">VALENCIA: {{factura.date}} <strong id="date"></strong></p>
+                    <p class="text-dark h6 text-end">VENCIMIENTO: {{factura.Vencimiento}} <strong id="vencimiento-date"></strong></p>
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col-sm">
+                    <p class="h6 text-dark">NOMBRE O RAZÓN SOCIAL: <span id="cliente" class="h6">{{factura.Cliente}}</span></p>
+                    <p class="h6 text-dark">TELÉFONO: <span id="celular" class="h6">{{factura.Celular}}</span></p>
+                    <p class="h6 text-dark">DIRECCIÓN: <span id="direccion" class="h6">{{factura.Direccion}}</span></p>
+                    <p class="h6 text-dark">VENDEDOR: <span id="Vendedor" class="h6">{{factura.Vendedor}}</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead class="border">
+                            <tr>
+                                <th class="h6 text-center border border-dark" style="font-size: 12px;">Código</th>
+                                <th class="h6 text-center border border-dark" style="font-size: 12px;">Producto</th>
+                                <th class="h6 text-center border border-dark" style="font-size: 12px;">Descrpcion</th>
+                                <th class="h6 text-center border border-dark" style="font-size: 12px;">Cantidad</th>
+                                <th class="h6 text-center border border-dark" style="font-size: 12px;">Precio unitario</th>
+                                <th class="h6 text-center border border-dark" style="font-size: 12px;">Precio total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenido-table">
+                            {{#each Productos}}
+                                <tr>
+                                    <td class="h6 text-center text-dark" style="font-size: 10px;"> {{Codigo}} </td>
+                                    <td class="h6 text-center text-dark" style="font-size: 10px;"> {{Producto}} </td>
+                                    <td class="h6 text-center text-dark" style="font-size: 10px;"> {{Modelo}} </td>
+                                    <td class="h6 text-center text-dark" style="font-size: 10px;"> {{Cantidad}} </td>
+                                    <td class="h6 text-center text-dark" style="font-size: 10px;"> {{precioUnidad}} </td>
+                                    <td class="h6 text-center text-dark" style="font-size: 10px;"> {{precioTotal}} </td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="footer" id="footer">
+                <div class="row">
+                    <div class="col-sm border border-dark">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="h6 text-start ml-2"> </p>
+                        <p class="h6 text-start ml-2 text-dark" id="Nota"><strong>{{factura.Nota}}</strong></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-end text-danger">Total: <strong class="text-dark"> <strong
+                                    id="APagar">{{factura.PrecioTotal}}</strong></strong></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm mt-5">
+                        <p class="text-end"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/facturacion/model-print.js"></script>
+</body>
+
+</html>

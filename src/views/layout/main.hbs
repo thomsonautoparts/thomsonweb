@@ -1,0 +1,35 @@
+{{{
+    body
+}}}
+<script src="/js/facturacion/push.js"></script>
+<script>
+
+    let $navlink = document.querySelectorAll(".nav-link") 
+    fetch('/solicitar-ordenes-de-compra-cantidad',{
+        method:'POST',
+    }).then((response) => {
+        return response.json()
+    }).then((response) => {
+        if(response){
+        for(i=0; i< $navlink.length; i++){
+            if($navlink[i].textContent == "Facturación"){
+                $navlink[i].innerHTML =`Facturación <span class="h6 badge badge-secondary btn btn-danger">${response.ordenes}</span>` 
+            }if($navlink[i].textContent == "Orden de compra"){
+                $navlink[i].innerHTML =`Orden de compra<span class="badge badge-secondary btn btn-danger" style="font-size:8px" >${response.ordenes}</span>` 
+            }if($navlink[i].textContent == "Cliente"){
+                $navlink[i].innerHTML =`Cliente <span class="badge badge-secondary btn btn-danger">${response.clientes}</span>` 
+            }if($navlink[i].textContent == "Solicitudes de recuperación"){
+                $navlink[i].innerHTML =`Solicitudes de recuperación <span class="badge badge-secondary btn btn-danger"  style="font-size:8px" >${response.solicitudes}</span>` 
+            }if($navlink[i].textContent == "Aprobar o rechazar"){
+                $navlink[i].innerHTML =`Aprobar o rechazar<span class="badge badge-secondary btn btn-danger"  style="font-size:8px" >${response.pendientes}</span>` 
+            }if(document.querySelector(".noticias-stock")){
+                if(document.querySelector(".noticias-stock").textContent == "Noticias"){
+                    document.querySelector(".noticias-stock").innerHTML = `Noticias <span class="text-warning badge badge-danger">${response.noticias}</span>`
+                }
+            }
+        }
+        }
+    })
+
+
+</script>

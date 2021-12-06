@@ -1,0 +1,117 @@
+<html id="HTML" lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thomson</title>
+    <link rel="shortcut icon" href="/css/assets/logo_icon.png" />
+    <script src="/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/materialize.css">
+    <link rel="stylesheet" href="/css/thomson.css" />
+  </head>
+
+  <body class="bg-dark">
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar-->
+      <div class="bg-dark2 border-right border-warning" id="sidebar-wrapper">
+        <div class="sidebar-heading text-warning"><img
+            src="/css/assets/logo.png"
+            width="180px"
+            height="30px"
+          />
+        </div>
+        <div class="list-group list-group-flush">
+          <a
+            class="list-group-item text-warning list-group-item-action bg-dark2"
+            href="/ver-clientes-asignados-vendedor"
+          >Clientes asignados</a>
+          <a
+            class="list-group-item text-warning list-group-item-action bg-dark2"
+            href="/ver-facturas-emitidas-vendedor"
+          >Todas las facturas</a>
+          <a
+            class="list-group-item text-warning list-group-item-action bg-dark2"
+            href="/ver-facturas-pendientes-vendedor"
+          >Facturas pendientes</a>
+          <a
+            class="list-group-item text-warning list-group-item-action bg-dark2"
+            href="/ver-ordenes-compras-vendedor"
+          >Ordenes de compras pendientes</a>
+        </div>
+      </div>
+      <!-- Page Content-->
+      <div id="page-content-wrapper bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom border-warning">
+          <button class="btn btn-warning" id="menu-toggle">Menú</button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          ><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a href="/home-seller" class="nav-link text-warning">Inicio</a>
+              </li>
+              <li class="nav-item mt-3">
+                <a
+                  class="nav-link btn btn-outline-success text-light"
+                  href="/usuarios/cerrar-sesion"
+                >Cerrar sesión</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+       <div class="container-fluid">
+                    <h1 class="mt-4 text-warning text-center">Historial de <span class="text-light">#{{Factura}}</span></h1>
+                      <div class="table-responsive mt-3">
+                            <table class="table" id="tabla">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Recibo</th>
+                                        <th scope="col">Modalidad</th>
+                                        <th scope="col">Comentario</th>
+                                        <th scope="col">Monto</th>
+                                    </tr>
+                                    <td colspan="7">
+                                        <input id="buscar" type="text" class="form-control" placeholder="Escriba su busqueda para filtar" />
+                                    </td>
+                                </thead>
+                                <tbody id="tbody">
+                                    {{#each Historial}}
+                                    <tr style="background-color: rgba(0,0,0,0.3);">
+                                        <th class="text-light">{{FechaPago}}</th>
+                                        <td class="text-light"> <a href="{{href}}" class="text-ingo">{{Recibo}}</a></td>
+                                        <td class="text-light">{{Modalidad}}</td>
+                                        <td class="text-light">{{Comentario}}</td>
+                                        <td class="text-light">{{Pago}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    <p style="color: transparent;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+                    cumque deleniti nihil
+                    aspernatur, rem magnam blanditiis? Iste temporibus molestias fugiat nobis? Pariatur enim maxime
+                    reprehenderit cum sit
+                    voluptatem doloremque nobis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
+                    ducimus hic sequi sed nulla quidem doloribus consequatur dolores deserunt iusto. Eveniet animi omnis
+                    eum maxime esse dolor aperiam qui cumque.</p>
+                    
+                </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script src="/js/sidebars.js"></script>
+  </body>
+
+</html>

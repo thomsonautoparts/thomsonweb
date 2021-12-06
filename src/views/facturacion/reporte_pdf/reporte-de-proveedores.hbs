@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de proveedores</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <main>
+        <h1 class="text-center text-dark">Reporte de proveedores</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Nombres</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>País</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Estado</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Dirección</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Código postal</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Gran mayor <span class="text-muted">(%)</span></strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Mayor <span class="text-muted">(%)</span></strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Detal <span class="text-muted">(%)</span></strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each proveedores}}
+                        <tr>
+                            <td class="text-center h6" style="font-size: 11px;">{{Nombre}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Pais}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Estado}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Direccion}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Postal}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{GranMayor}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Mayor}}</td>
+                            <td class="text-center h6" style="font-size: 11px;">{{Detal}}</td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+        </div>
+    </main>
+    <script>
+        window.print()
+    </script>
+</body>
+
+</html>

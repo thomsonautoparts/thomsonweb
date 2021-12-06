@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/facturacion-forms.css">
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="/Facturacion">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="150px" height="30px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facturación</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="nav-link" href="/facturacion/nueva-factura">Nueva-factura</a></li>
+                                <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/por-cobrar">Por cobrar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cobradas">Cobradas</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ventas">Ventas</a></li> <!--Todas -->
+                                        <li><a class="nav-link" href="/facturacion/anular-factura">Anular</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ordenes-compra">Orden de compra</a></li> <!--Pedidos de los clientes-->
+                                        <li><a class="nav-link" href="/facturacion/nueva-cotizacion">Cotización</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/ver-cotizaciones">Ver cotizaciones</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/libro-contable">Libro contable</a></li> <!--Realizar cotizaciones sin afectar stock-->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Cobranza</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/cobranza">
+                                    <p class="name_product nav-link">Cobranza</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/devolucion">
+                                    <p class="name_product nav-link">Realizar Devolución</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todas-devoluciones">
+                                    <p class="name_product nav-link">Devoluciones</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todos-recibos">
+                                    <p class="name_product nav-link">Recibos de pago</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/reporte-cxc">
+                                    <p class="name_product nav-link">Reporte de cuentas por cobrar</p>
+                                </a>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inventario</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Crear Artículo</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/stock">
+                                    <p class="name_product nav-link">Editar Artículo</p>
+                                </a>
+                                      <a class=" dropdown-item text-light" href="/facturacion/registrar-garantias">
+                                    <p class="name_product nav-link">Registrar garantías</p>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/ver-garantias">
+                                    <p class="name_product nav-link">Ver garantías</p>
+                                </a>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/estado-inventario">
+                                    <p class="name_product nav-link">Estado de inventario</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-ajustes">
+                                    <p class="name_product nav-link">Reporte de movimientos</p>
+                                </a>
+                               <a class=" dropdown-item text-light" href="/facturacion/reporte-de-articulos">
+                                    <p class="name_product nav-link">Reporte de articulos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/cambio-masivo-costo">
+                                    <p class="name_product nav-link">Cambio masivo de costos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/reporte-stock">
+                                    <p class="name_product nav-link">Reporte de stock</p>
+                                </a>
+                                  <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Ajuste de inventario</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/descargar-stock">Descargar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cargar-stock">Cargar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+                                <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class=" dropdown-item text-light" href="/facturacion/crear-proveedor">
+                                        <p class="name_product nav-link">Crear</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/editar-proveedor">
+                                        <p class="name_product nav-link">Editar</p>
+                                    </a>
+                                        <a class="dropdown-item text-light" href="/facturacion/realizar-ordenes">
+                                        <p class="name_product nav-link">Realizar orden</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/ordenes-proveedor">
+                                        <p class="name_product nav-link">Lista de ordenes</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/reporte-de-proveedores">
+                                        <p class="name_product nav-link">Reporte de proveedores</p>
+                                    </a>
+                                </ul>
+                            </li>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                            <a class=" dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                <p class="name_product nav-link">Registrar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/clientes">
+                                <p class="name_product nav-link">Editar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/aprobar-usuarios">
+                                <p class="name_product nav-link">Aprobar o rechazar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/pausar-activar-cliente">
+                                <p class="name_product nav-link">Pausar o activar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reporte-cliente">
+                                <p class="name_product nav-link">Reportes</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reportes-precio">
+                                <p class="name_product nav-link">Lista de precios</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/solicitudes-recuperacion-contrasena">
+                                <p class="name_product nav-link">Solicitudes de recuperación</p>
+                            </a>
+                        </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Vendedor</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/vendedores">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/reporte-vendedores">
+                                    <p class="name_product nav-link">Reportes</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-vendedor">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Transporte</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                               <a class=" dropdown-item text-light" href="/facturacion/registrar-transporte">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/transportes">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/activar-inactivar-transporte">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar perfil</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/usuarios">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-usuario">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Comisión</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/comision/por-cancelar">
+                                    <p class="name_product nav-link">Por cancelar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/comision/canceladas">
+                                    <p class="name_product nav-link">Canceladas</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/administracion">
+                                    <p class="name_product nav-link">Libro de entradas y salidas</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/cuentas-por-pagar">
+                                    <p class="name_product nav-link">Cuentas por pagar</p>
+                                </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/agenda">Agenda</a>
+                        </li>
+                        
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+
+                    </ul>
+                       <ul class="navbar-nav ml-0 mr-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                    <button class="btn btn-outline-success" type="button">
+                                        Cerrar sesión
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+  </header>
+  <main>
+        <div class="container-fluid mt-3 mb-5">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="text-light ">Libros contables</h2>
+                </div>
+                {{#each libros}}
+              <div class="col-md-6 col-sm-12 my-3">
+                    <div class="card border-0 shadow p-3  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                        <div class="card-header text-center">
+                            <h3>{{Mes}}</h3>
+                            <a class="btn btn-outline-danger ml-3"  href="/descargar-libro-contable-pdf/{{_id}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                                    <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"/>
+                                    <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.651 11.651 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.697 19.697 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"/>
+                                </svg>PDF
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive mt-0 mb-0">
+                                <table class="table table-dark table-striped table-hover table-sm">     
+                                    <thead class="border border-dark">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="7" class="h5">Número: <span class="lead" style="font-size: 15px;">{{NumeroMes}}{{Anio}}</span> </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3" class="h5">Mes: <span class="lead" style="font-size: 15px;">{{Mes}}</span></th>
+                                                <th></th>
+                                                <th colspan="3" class="h5">Año: <span class="lead" style="font-size: 15px;">{{Anio}}</span></th>
+                                            </tr>
+                                            <tr>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Fecha</th>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Cliente</th>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Tipo</th>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Número</th>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Ingreso</th>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Egreso</th>
+                                                <th class="lead text-light text-center" style="font-size: 14px;">Saldo</th>
+                                            </tr>
+                                        </thead>
+                                    </thead>
+                                    <tbody >
+                                        {{#each dia}}
+                                            <tr>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Fecha}}</th>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Cliente}}</th>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Tipo}}</th>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Numero}}</th>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Ingreso}}</th>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Egreso}}</th>
+                                            <th class="lead text-light text-center" style="font-size: 13px;">{{Saldo}}</th>
+                                        </tr>
+                                        {{/each}}
+                                        <tr>
+                                            <td class="lead text-danger text-end" colspan="4">Total:</td>  
+                                            <td class="lead text-light text-center">{{TotalIngreso}}</td>  
+                                            <td class="lead text-light text-center">{{TotalEgreso}}</td>  
+                                            <td class="lead text-light text-center">{{TotalGeneral}}</td>  
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+  </main>
+    <script src="/js/bootstrap.js"></script>
+    
+<footer class="footer fixed-bottom" style="background-color: rgba(41, 41, 41, 0.99);">
+    <div class="container-fluid text-center mt-2">
+        <span class="text-muted">SISTEMA ADMINISTRATIVO THOMSON</span>
+    </div>
+</footer>
+</body>
+
+</html>

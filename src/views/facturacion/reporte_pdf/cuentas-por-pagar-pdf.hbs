@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+        </div>
+        <h3 class="text-center text-dark">CUENTAS POR PAGAR</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Fecha</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Comentario</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Ultimo pago</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each cuentas}}
+                        <tr >
+                            <td class="h6 text-center" style="font-size: 11px;">{{FechaEstimada}}</td>
+                            <td class="h6 text-center" style="font-size: 11px;">{{Comentario}}</td>
+                            <td class="h6 text-center entradas text-danger" style="font-size: 11px;">{{UltimoPago}}</td>
+                            <td class="h6 text-center salidas text-success" style="font-size: 11px;">{{Total}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="h6 text-danger text-end" colspan="3">Total:</td>  
+                            <td class="h6 text-dark text-center" id="SalidaTotal" ></td>  
+                            <td ></td>  
+                        </tr>
+                    </tfoot>
+                </table>
+        </div>
+    </main>
+    <script>
+        const d = document
+        const $salidas = d.querySelectorAll(".salidas")
+        let Salida = 0
+         
+        for(i=0; i < $salidas.length; i++){
+            let salida = $salidas[i].textContent
+
+            salida = salida.replace("$","");
+            salida = salida.replace(",","");
+            salida = parseFloat(salida);
+
+            Salida = (+Salida + +salida).toFixed(2)
+        }
+
+    
+        d.getElementById("SalidaTotal").textContent = new Intl.NumberFormat('en-US',{ style: 'currency', currency: 'USD' }).format(+Salida)     
+        window.print()
+    </script>
+</body>
+</html>

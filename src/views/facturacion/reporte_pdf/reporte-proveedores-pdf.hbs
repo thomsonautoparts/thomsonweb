@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+        </div>
+        <h3 class="text-center text-dark">{{Proveedor}}</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6" style="font-size: 12px;"><strong>Código Thomson</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Tipo producto</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Descrpción</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Posición</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Cantidad total</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio FOB</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio FOB total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each stock}}
+                        <tr>
+                            <td class="h6" style="font-size: 11px;">{{CodigoT}}</td>
+                            <td class="h6" style="font-size: 11px;">{{TipoProducto}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Descripcion}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Posicion}}</td>
+                            <td class="cantidad h6" style="font-size: 11px;">{{CantidadTotal}}</td>
+                            <td class="costo1 h6" style="font-size: 11px;">{{CostoFOB}}</td>
+                            <td class="costo2 h6" style="font-size: 11px;">{{CostoFOBTotal}}</td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td class="h6"></td>
+                            <td class="h6"></td>
+                            <td class="h6"></td>
+                            <td class="text-end text-danger h6" style="font-size: 12px;">Total:</td>
+                            <td class="h6" id="TotalCantidad" style="font-size: 12px;">{{CantidadTotal}}</td>
+                            <td class="h6"></td>
+                            <td class="h6" id="TotalCosto2" style="font-size: 12px;">{{PrecioTotal}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+        </div>
+    </main>
+    <script>
+        window.print()
+    </script>
+</body>
+
+</html>

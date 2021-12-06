@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="html">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/css/assets/logo_icon.png">
+  <link rel="stylesheet" href="/css/thomson.css">
+
+
+  <title>Signin -Thomson</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="text-center body-sign-in">
+
+  <div class="row">
+    <div class="col-sm-12">
+    </div>
+      {{>errors}}
+    <div class="col-sm-12">
+  <div class="form-sigin" id="contenido">
+    <form class="form-signin" action="/sign-in" method="POST">
+      <img class="mb-4" src=".//css/assets/logo.png" alt="" width="300" height="60">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">User</label>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill"
+        viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      </svg>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Emal" name="email" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+      </svg>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+      <div class="checkbox mb-3">
+        <div>
+          <a href="/solicitud-recuperacion-contrasena" class="back_top h6 text-decoration-none">You loss your password? Click here</a>
+        </div>
+      </div>
+      <a href="Facturacion">
+        <button class="btn btn-secondary btn-block" type="submit">Sign in</button> <br>
+      </a>
+    </form>
+    <a href="register">
+      <button class="btn btn-secondary btn-block" type="submit">Register here</button> <br><br>
+    </a>
+    <a href="thomson" class="back_top">Back to home</a>
+  </div>
+  </div>
+  </div>
+  <script src="/js/sign-in.js"></script>
+  <script src="/js/bootstrap.js"></script>
+</body>
+
+</html>

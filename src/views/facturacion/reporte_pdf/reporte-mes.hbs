@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+        </div>
+        <h3 class="text-center text-dark">{{Mes}}-{{Anio}}</h1>
+        <div class="table-responsive"></div>
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6" style="font-size: 12px;"><strong>Fecha</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Comentario</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Monto</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Entrada</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Salida</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each dias}}
+                        <tr class="lineas">
+                            <td class="h6" style="font-size: 11px;">{{Fecha}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Comentario}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Monto}}</td>
+                            <td class="h6 entradas" style="font-size: 11px;">{{Entrada}}</td>
+                            <td class="h6 salidas" style="font-size: 11px;">{{Salida}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Total}}</td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td class="h6 text-danger text-end" colspan="3"  style="font-size: 11px;">Totales:</td>  
+                            <td class="h6 text-dark" id="EntradaTotal" style="font-size: 11px;"></td>  
+                            <td class="h6 text-dark" id="SalidaTotal"  style="font-size: 11px;"></td>  
+                            <td ></td>  
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </main>
+    <script>
+        const d = document
+        const lineas = d.querySelectorAll(".lineas")
+        const $entradas = d.querySelectorAll(".entradas")
+        const $salidas = d.querySelectorAll(".salidas")
+        let Entrada = 0
+        let Salida = 0
+        for(i= 0; i< lineas.length; i++){
+            if(lineas[i].children[3].textContent != "$0.00"){
+                lineas[i].children[3].classList.add("text-success")
+            }else{
+                lineas[i].children[4].classList.add("text-danger")
+            }
+        }    
+           for(i=0; i < $entradas.length; i++){
+            let entrada = $entradas[i].textContent
+
+            entrada = entrada.replace("$","");
+            entrada = entrada.replace(",","");
+            entrada = parseFloat(entrada);
+
+            Entrada = (+Entrada + +entrada).toFixed(2)
+        
+            console.log(Entrada)
+
+        }        
+        for(i=0; i < $salidas.length; i++){
+            let salida = $salidas[i].textContent
+
+            salida = salida.replace("$","");
+            salida = salida.replace(",","");
+            salida = parseFloat(salida);
+
+            Salida = (+Salida + +salida).toFixed(2)
+        }
+
+    
+        d.getElementById("SalidaTotal").textContent = new Intl.NumberFormat('en-US',{ style: 'currency', currency: 'USD' }).format(+Salida)     
+        d.getElementById("EntradaTotal").textContent = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(+Entrada)    
+        window.print()
+    </script>
+</body>
+</html>

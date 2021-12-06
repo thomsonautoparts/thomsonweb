@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/facturacion-forms.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="/Facturacion">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="150px" height="30px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facturación</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="nav-link" href="/facturacion/nueva-factura">Nueva-factura</a></li>
+                                <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/por-cobrar">Por cobrar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cobradas">Cobradas</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ventas">Ventas</a></li> <!--Todas -->
+                                        <li><a class="nav-link" href="/facturacion/anular-factura">Anular</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ordenes-compra">Orden de compra</a></li> <!--Pedidos de los clientes-->
+                                        <li><a class="nav-link" href="/facturacion/nueva-cotizacion">Cotización</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/ver-cotizaciones">Ver cotizaciones</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/libro-contable">Libro contable</a></li> <!--Realizar cotizaciones sin afectar stock-->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Cobranza</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/cobranza">
+                                    <p class="name_product nav-link">Cobranza</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/devolucion">
+                                    <p class="name_product nav-link">Realizar Devolución</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todas-devoluciones">
+                                    <p class="name_product nav-link">Devoluciones</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todos-recibos">
+                                    <p class="name_product nav-link">Recibos de pago</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/reporte-cxc">
+                                    <p class="name_product nav-link">Reporte de cuentas por cobrar</p>
+                                </a>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inventario</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Crear Artículo</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/stock">
+                                    <p class="name_product nav-link">Editar Artículo</p>
+                                </a>
+                                      <a class=" dropdown-item text-light" href="/facturacion/registrar-garantias">
+                                    <p class="name_product nav-link">Registrar garantías</p>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/ver-garantias">
+                                    <p class="name_product nav-link">Ver garantías</p>
+                                </a>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/estado-inventario">
+                                    <p class="name_product nav-link">Estado de inventario</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-ajustes">
+                                    <p class="name_product nav-link">Reporte de movimientos</p>
+                                </a>
+                               <a class=" dropdown-item text-light" href="/facturacion/reporte-de-articulos">
+                                    <p class="name_product nav-link">Reporte de articulos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/cambio-masivo-costo">
+                                    <p class="name_product nav-link">Cambio masivo de costos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/reporte-stock">
+                                    <p class="name_product nav-link">Reporte de stock</p>
+                                </a>
+                                  <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Ajuste de inventario</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/descargar-stock">Descargar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cargar-stock">Cargar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+                                <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class=" dropdown-item text-light" href="/facturacion/crear-proveedor">
+                                        <p class="name_product nav-link">Crear</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/editar-proveedor">
+                                        <p class="name_product nav-link">Editar</p>
+                                    </a>
+                                        <a class="dropdown-item text-light" href="/facturacion/realizar-ordenes">
+                                        <p class="name_product nav-link">Realizar orden</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/ordenes-proveedor">
+                                        <p class="name_product nav-link">Lista de ordenes</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/reporte-de-proveedores">
+                                        <p class="name_product nav-link">Reporte de proveedores</p>
+                                    </a>
+                                </ul>
+                            </li>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                            <a class=" dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                <p class="name_product nav-link">Registrar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/clientes">
+                                <p class="name_product nav-link">Editar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/aprobar-usuarios">
+                                <p class="name_product nav-link">Aprobar o rechazar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/pausar-activar-cliente">
+                                <p class="name_product nav-link">Pausar o activar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reporte-cliente">
+                                <p class="name_product nav-link">Reportes</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reportes-precio">
+                                <p class="name_product nav-link">Lista de precios</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/solicitudes-recuperacion-contrasena">
+                                <p class="name_product nav-link">Solicitudes de recuperación</p>
+                            </a>
+                        </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Vendedor</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/vendedores">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/reporte-vendedores">
+                                    <p class="name_product nav-link">Reportes</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-vendedor">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Transporte</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                               <a class=" dropdown-item text-light" href="/facturacion/registrar-transporte">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/transportes">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/activar-inactivar-transporte">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar perfil</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/usuarios">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-usuario">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Comisión</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/comision/por-cancelar">
+                                    <p class="name_product nav-link">Por cancelar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/comision/canceladas">
+                                    <p class="name_product nav-link">Canceladas</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/administracion">
+                                    <p class="name_product nav-link">Libro de entradas y salidas</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/cuentas-por-pagar">
+                                    <p class="name_product nav-link">Cuentas por pagar</p>
+                                </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/agenda">Agenda</a>
+                        </li>
+                        
+                         <li class="nav-item">
+                            <a class="nav-link active" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+
+                    </ul>
+                       <ul class="navbar-nav ml-0 mr-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                    <button class="btn btn-outline-success" type="button">
+                                        Cerrar sesión
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+      <div hidden id="spinner"></div>
+        <section>
+            <div class="container-fluid mb-4">
+                <div class="row justify-content-around mt-3">
+                    <div class="col-sm-3">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center"> Visitas</h3>
+                            <h3 class="text-light text-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye-fill text-warning" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>  <span id="Visitas"></span>  </h3>
+                                    
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                         <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Clientes registrados</h3>
+                          
+                            <h3 class="text-light text-center"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" class="bi bi-person-plus-fill text-warning" viewBox="0 0 16 16">
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                            </svg> <span id="Clientes"></span></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                         <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Ordenes registradas</h3>
+                            <h3 class="text-light text-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-printer-fill text-warning" viewBox="0 0 16 16">
+                            <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                            <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            </svg>  <span id="Ordenes"></span>  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                         <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Facturas emitidas</h3>
+                            <h3 class="text-light text-center"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-printer-fill text-warning" viewBox="0 0 16 16">
+                            <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                            <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            </svg> <span id="FacturasEmitidas"> </span>  </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Facturas a gran mayor</h3>
+                            <h3 class="text-light text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cash text-warning" viewBox="0 0 16 16">
+                                    <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                    <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+                                </svg> <span id="FacturasGranMayor"></span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Facturas a mayor</h3>
+                            <h3 class="text-light text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cash-coin text-warning" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                    <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                    <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                                </svg> <span id="FacturasMayor"></span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Facturas a detal</h3>
+                            <h3 class="text-light text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cash-stack text-warning" viewBox="0 0 16 16">
+                                    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                    <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
+                                </svg> <span id="FacturasDetal"></span>
+                            </h3>
+                        </div>
+                    </div>
+                     <div class="col-sm-6">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Valor facturado</h3>
+                            <h3 class="text-light text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-currency-dollar text-warning" viewBox="0 0 16 16">
+                                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                </svg> <span id="ValorFacturado"></span>
+                            </h3>
+                        </div>
+                    </div>
+                     <div class="col-sm-6">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Utilidades</h3>
+                            <h3 class="text-light text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-piggy-bank text-warning" viewBox="0 0 16 16">
+                                    <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z"/>
+                                    <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z"/>
+                                </svg> <span id="Utlidades"></span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card border-0 shadow p-3 mb-5 rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <div>
+                              <canvas id="myChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card border-0 shadow p-3 mb-5 rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <div>
+                              <canvas id="myChart2" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                       <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Amortiguadores vendidos</h3>
+                            <h3 class="text-light text-center">
+                                <img src="/css/assets/icon-shock.png" width="40px" height="40px" alt="">
+                                 <span id="Amortiguadores"></span>
+                            </h3>
+                        </div>
+                    </div>
+                       <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Bases de amortiguador vendidas</h3>
+                            <h3 class="text-light text-center">
+                                <img src="/css/assets/strut-icon.png" width="40px" height="40px"> 
+                                <span id="Bases"></span>
+                            </h3>
+                        </div>
+                    </div>
+                       <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5  rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <h3 class="text-center">Guardapolvos vendidos</h3>
+                            <h3 class="text-light text-center">
+                                <img src="/css/assets/boot-icon.png" width="26px" height="40px" alt=""> 
+                                <span id="Guardapolvos"></span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5 rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <div>
+                              <canvas id="myChart3" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5 rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <div>
+                              <canvas id="myChart4" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card border-0 shadow p-3 mb-5 rounded" style="background-color: rgba(41, 41, 41, 0.99);">
+                            <div>
+                              <canvas id="myChart5" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+    const $spinner = document.getElementById("spinner")
+    const $Visitas = document.getElementById("Visitas") 
+    const $Clientes = document.getElementById("Clientes")
+    const $Ordenes = document.getElementById("Ordenes")
+    const $FacturasEmitidas = document.getElementById("FacturasEmitidas")
+    const $FacturasGranMayor = document.getElementById("FacturasGranMayor")
+    const $FacturasMayor = document.getElementById("FacturasMayor")
+    const $FacturasDetal = document.getElementById("FacturasDetal")
+    const $ValorFacturado = document.getElementById("ValorFacturado")
+    const $Utilidades = document.getElementById("Utlidades")
+    const $Amortiguadores = document.getElementById("Amortiguadores")
+    const $Bases = document.getElementById("Bases")
+    const $Guardapolvos = document.getElementById("Guardapolvos")
+
+    //$spinner.removeAttribute("hidden")    
+    fetch("/estadisticas-empresa", {
+        method: "POST",
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+        const ctx = document.getElementById("myChart")
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: response.mesFacturas,
+                datasets: [{
+                    label: 'Valor USD',
+                    data: response.valorFacturas,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                 responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                },
+                title: {
+                    display: true,
+                    text: 'Valor facturado por mes'
+                }
+                }
+                }
+        });
+       const ctx2 = document.getElementById("myChart2")
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: response.mesUtilidades,
+                datasets: [{
+                    label: 'Valor USD',
+                    data: response.valorUtilidades,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                 responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                },
+                title: {
+                    display: true,
+                    text: 'Valor utilideades por mes'
+                }
+                }
+                }
+        });
+        const ctx3 = document.getElementById("myChart3")
+        var myChart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: response.mesAmortiguador,
+                datasets: [{
+                    label: 'Unidades por mes',
+                    data:  response.cantidadAmortiguador,
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 193, 7, 0.4)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                 responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                },
+                title: {
+                    display: true,
+                    text: 'Amortiguadores vendidos'
+                }
+                }
+                }
+        });
+        const ctx4 = document.getElementById("myChart4")
+        var myChart4 = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: response.mesBases,
+                datasets: [{
+                    label: 'Unidades por mes',
+                    data: response.cantidadBases,
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 193, 7, 0.4)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                 responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                },
+                title: {
+                    display: true,
+                    text: 'Bases de amortiguador vendidas'
+                }
+                }
+                }
+        });
+        const ctx5 = document.getElementById("myChart5")
+        var myChart5 = new Chart(ctx5, {
+            type: 'bar',
+            data: {
+                labels: response.mesBoots,
+                datasets: [{
+                    label: 'Unidades por mes',
+                    data: response.cantidadBoots,
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 193, 7, 0.4)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                 responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                },
+                title: {
+                    display: true,
+                    text: ' Guardapolvos vendidos'
+                }
+                }
+                }
+        });
+
+
+        $spinner.setAttribute("hidden","")
+    })
+    //$spinner.removeAttribute("hidden")    
+
+    fetch("/estadisticas-datos", {
+    method: "POST",
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+    let contador = response.contador[0].Contador
+    let contadorClientes = response.contadorClientes
+    let contadorOrden = response.contadorOrden
+    let contadorFacturas = response.contadorFacturas
+    let amortiguadoresGeneral = response.amortiguadoresGeneral[0].Cantidad
+    let basesGeneral = response.basesGeneral[0].Cantidad
+    let bootsGeneral = response.bootsGeneral[0].Cantidad
+    let valorGeneralFacturado = response.valorGeneralFacturado[0].valor
+    let valorGeneralUtilidades = response.valorGeneralUtilidades[0].valor
+    let valorFacturadoGranMayor = response.valorFacturadoGranMayor[0].valor
+    let valorFacturadoMayor = response.valorFacturadoMayor[0].valor
+    let valorFacturadoDetal = response.valorFacturadoDetal[0].valor  
+    valorGeneralFacturado = new Intl.NumberFormat("en-US", {  style: "currency",  currency: "USD",}).format(+valorGeneralFacturado.toFixed(2))
+    valorGeneralUtilidades = new Intl.NumberFormat("en-US", {  style: "currency",  currency: "USD",}).format(+valorGeneralUtilidades.toFixed(2))
+    valorFacturadoGranMayor = new Intl.NumberFormat("en-US", {  style: "currency",  currency: "USD",}).format(+valorFacturadoGranMayor.toFixed(2))
+    valorFacturadoMayor = new Intl.NumberFormat("en-US", {  style: "currency",  currency: "USD",}).format(+valorFacturadoMayor.toFixed(2))
+    valorFacturadoDetal = new Intl.NumberFormat("en-US", {  style: "currency",  currency: "USD",}).format(+valorFacturadoDetal.toFixed(2))  
+
+    $Visitas.textContent = contador
+    $Clientes.textContent = contadorClientes
+    $Ordenes.textContent = contadorOrden
+    $FacturasEmitidas.textContent = contadorFacturas
+
+    $FacturasGranMayor.textContent = valorFacturadoGranMayor
+    $FacturasMayor.textContent = valorFacturadoMayor
+    $FacturasDetal.textContent = valorFacturadoDetal
+    $ValorFacturado.textContent = valorGeneralFacturado
+    $Utilidades.textContent = valorGeneralUtilidades
+    $Amortiguadores.textContent = amortiguadoresGeneral
+    $Bases.textContent = basesGeneral
+    $Guardapolvos.textContent = bootsGeneral
+
+
+    })
+    
+       
+        document.addEventListener("keydown", e => {
+            if(e.keyCode == 120 ){
+                window.open('/facturacion/acceso-directo-stock', 'Stock', "width=1400, heigh=100%")
+            }
+        })
+
+
+    </script>
+<footer class="footer" style="background-color: rgba(41, 41, 41, 0.99);">
+    <div class="container-fluid text-center mt-2">
+        <span class="text-muted">SISTEMA ADMINISTRATIVO THOMSON</span>
+    </div>
+</footer>
+</body>
+
+</html>

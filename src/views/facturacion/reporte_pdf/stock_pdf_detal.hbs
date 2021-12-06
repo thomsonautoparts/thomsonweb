@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+            <p><strong>Items:</strong> <span id="items"></span></p>
+        </div>
+        <h3 class="text-center text-dark">{{Titulo}}</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6" style="font-size: 12px;"><strong>Código Thomson</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Código homólogo</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Tipo producto</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Descrpción</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Posición</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Cantidad total</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio Unidad</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio Total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each Stock}}
+                        <tr>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoT}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoG}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{TipoProducto}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Descripcion}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Posicion}} </td>
+                            <td class=" cantidad h6" style="font-size: 11px;"> {{CantidadTotal}} </td>
+                            <td class=" costo1 h6" style="font-size: 11px;"> {{CostoDetal}} </td>
+                            <td class=" costo2 h6" style="font-size: 11px;"> {{CostoDetalTotal}} </td>
+                        </tr>
+                        {{/each}}
+                        {{#each stock}}
+                        <tr>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoT}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoG}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{TipoProducto}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Descripcion}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Posicion}} </td>
+                            <td class=" cantidad h6" style="font-size: 11px;"> {{CantidadTotal}} </td>
+                            <td class=" costo1 h6" style="font-size: 11px;"> {{CostoDetal}} </td>
+                            <td class=" costo2 h6" style="font-size: 11px;"> {{CostoDetalTotal}} </td>
+                        </tr>
+                        {{/each}}
+                           <tr>
+                                <td class=" h6"></td>
+                                <td class=" h6"></td>
+                                <td class=" h6"></td>
+                                <td class=" h6"></td>
+                                <td class="text-end text-danger h6" style="font-size: 12px;">Total:</td>
+                                <td class=" h6" id="TotalCantidad" style="font-size: 12px;"></td>
+                                <td class=" h6"></td>
+                                <td class=" h6" id="TotalCosto2" style="font-size: 12px;"></td>
+                            </tr>
+
+                    </tbody>
+
+                </table>
+        </div>
+    </main>
+    <script>    
+        const d = document
+        const cantidad = d.querySelectorAll(".cantidad")
+        const costo1 = d.querySelectorAll(".costo1")
+        const costo2 = d.querySelectorAll(".costo2")
+        let totalcantidad = 0
+        let totalcosto1 = 0        
+        let totalcosto2 = 0        
+        for(i=0; i< cantidad.length; i++ ){
+            totalcantidad += +cantidad[i].textContent
+            totalcosto2 += +costo2[i].textContent
+        }
+            d.getElementById("TotalCantidad").textContent = totalcantidad
+            d.getElementById("TotalCosto2").textContent = totalcosto2.toFixed(2)
+        d.getElementById("items").textContent = cantidad.length
+        window.print()
+    </script>
+</body>
+</html>

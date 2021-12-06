@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es" class="html">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/css/assets/logo_icon.png">
+  <link rel="stylesheet" href="/css/thomson.css">
+
+
+  <title>Recuperación de contraseña</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="text-center body-sign-in">
+<div class="row">
+    <div class="col-sm-12">
+    </div>
+    <div class="col-sm-12">
+        <div class="form-sigin" id="contenido">
+            <form action="/solicitud-recuperacion-contrasena" method="POST">
+                <img class="mb-4" src=".//css/assets/logo.png" alt="" width="300" height="60">
+                {{#if error}}
+                   <div class="alert alert-danger alert-dismissible fade show" role="alert">   
+                    <p class="h6">{{error}}</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {{/if}}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-light text-center">INTRODUZCA CORREO ELECTRONICO</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="email" name="email" class="text-center form-control" placeholder="EJEMPLO@EXAMPLE.COM">
+                                <button type="submit" class="btn btn-warning mt-2 w-100">ENVIAR SOLICITUD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
+  <script src="/js/bootstrap.js"></script>
+</body>
+
+</html>

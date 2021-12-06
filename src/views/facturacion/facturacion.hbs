@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.80.0">
+  <title>Thomson - Facturacion</title>
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/facturacion-forms.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  <!-- Favicons -->
+
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+ <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="/Facturacion">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="150px" height="30px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facturación</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="nav-link" href="/facturacion/nueva-factura">Nueva-factura</a></li>
+                                <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/por-cobrar">Por cobrar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cobradas">Cobradas</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ventas">Ventas</a></li> <!--Todas -->
+                                        <li><a class="nav-link" href="/facturacion/anular-factura">Anular</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ordenes-compra">Orden de compra</a></li> <!--Pedidos de los clientes-->
+                                        <li><a class="nav-link" href="/facturacion/nueva-cotizacion">Cotización</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/ver-cotizaciones">Ver cotizaciones</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/libro-contable">Libro contable</a></li> <!--Realizar cotizaciones sin afectar stock-->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Cobranza</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/cobranza">
+                                    <p class="name_product nav-link">Cobranza</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/devolucion">
+                                    <p class="name_product nav-link">Realizar Devolución</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todas-devoluciones">
+                                    <p class="name_product nav-link">Devoluciones</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todos-recibos">
+                                    <p class="name_product nav-link">Recibos de pago</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/reporte-cxc">
+                                    <p class="name_product nav-link">Reporte de cuentas por cobrar</p>
+                                </a>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inventario</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Crear Artículo</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/stock">
+                                    <p class="name_product nav-link">Editar Artículo</p>
+                                </a>
+                                      <a class=" dropdown-item text-light" href="/facturacion/registrar-garantias">
+                                    <p class="name_product nav-link">Registrar garantías</p>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/ver-garantias">
+                                    <p class="name_product nav-link">Ver garantías</p>
+                                </a>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/estado-inventario">
+                                    <p class="name_product nav-link">Estado de inventario</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-ajustes">
+                                    <p class="name_product nav-link">Reporte de movimientos</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-de-articulos">
+                                    <p class="name_product nav-link">Reporte de articulos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/cambio-masivo-costo">
+                                    <p class="name_product nav-link">Cambio masivo de costos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/reporte-stock">
+                                    <p class="name_product nav-link">Reporte de stock</p>
+                                </a>
+                                  <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Ajuste de inventario</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/descargar-stock">Descargar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cargar-stock">Cargar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+                                <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class=" dropdown-item text-light" href="/facturacion/crear-proveedor">
+                                        <p class="name_product nav-link">Crear</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/editar-proveedor">
+                                        <p class="name_product nav-link">Editar</p>
+                                    </a>
+                                        <a class="dropdown-item text-light" href="/facturacion/realizar-ordenes">
+                                        <p class="name_product nav-link">Realizar orden</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/ordenes-proveedor">
+                                        <p class="name_product nav-link">Lista de ordenes</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/reporte-de-proveedores">
+                                        <p class="name_product nav-link">Reporte de proveedores</p>
+                                    </a>
+                                </ul>
+                            </li>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                            <a class=" dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                <p class="name_product nav-link">Registrar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/clientes">
+                                <p class="name_product nav-link">Editar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/aprobar-usuarios">
+                                <p class="name_product nav-link">Aprobar o rechazar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/pausar-activar-cliente">
+                                <p class="name_product nav-link">Pausar o activar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reporte-cliente">
+                                <p class="name_product nav-link">Reportes</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reportes-precio">
+                                <p class="name_product nav-link">Lista de precios</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/solicitudes-recuperacion-contrasena">
+                                <p class="name_product nav-link">Solicitudes de recuperación</p>
+                            </a>
+                        </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Vendedor</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/vendedores">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/reporte-vendedores">
+                                    <p class="name_product nav-link">Reportes</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-vendedor">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Transporte</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                               <a class=" dropdown-item text-light" href="/facturacion/registrar-transporte">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/transportes">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/activar-inactivar-transporte">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar perfil</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/usuarios">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-usuario">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Comisión</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/comision/por-cancelar">
+                                    <p class="name_product nav-link">Por cancelar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/comision/canceladas">
+                                    <p class="name_product nav-link">Canceladas</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/administracion">
+                                    <p class="name_product nav-link">Libro de entradas y salidas</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/cuentas-por-pagar">
+                                    <p class="name_product nav-link">Cuentas por pagar</p>
+                                </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/agenda">Agenda</a>
+                        </li>
+                        
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+
+                    </ul>
+                       <ul class="navbar-nav ml-0 mr-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                    <button class="btn btn-outline-success" type="button">
+                                        Cerrar sesión
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <main>
+      {{>errors}}
+       <div class="container-fluid mb-5">
+           <div class="row mt-2">
+               <div class="col-sm-12 text-center">
+                   <h1 class="text-light text-center">Bienvenido <span class="text-warning">{{Nombre}}</span>.</h1>
+               </div>
+
+               <div class="col-sm-12 mb-5">
+                   <div class="container-fluid">
+                        <section>
+                            <div class="row">
+                            <div class="col-12 mt-3 mb-1">
+                                <h5 class="text-uppercase">ACCESOS RAPIDOS</h5>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card"  style="background-color: rgba(41, 41, 41, 0.99);">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="card-body shadow">
+                                                <div class="d-flex justify-content-between px-md-1">
+                                                <div class="align-self-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                                        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                                        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                                                    </svg>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h5 class="text-warning">NUEVA FACTURA</h5>
+                                                </div>
+                                                <div class="text-center">
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <a href="/facturacion/nueva-factura" class="btn btn-warning w-100">ir</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="text-warning">NUEVO CLIENTE</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/registrar-cliente" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                                           <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                                        </svg>
+                                    </div>
+                                      <div class="text-end">
+                                        <h5 class="text-warning">NUEVO PROVEEDOR</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/crear-proveedor" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body" >
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                                         <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="text-warning">NUEVO VENDEDOR</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/registrar-vendedor" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                                            <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                            <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="text-warning">VER FACTURAS</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/ventas" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-clipboard-minus" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M5.5 9.5A.5.5 0 0 1 6 9h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+                                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="text-warning">VER ORDENES</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/ordenes-compra" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="text-warning">VER LIBROS</h5>
+                                    </div>
+                                   <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/administracion" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
+                                        <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                                        <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="text-warning">VER DASHBOARD</h5>
+                                    </div>
+                                     <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/dashboard" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16">
+                                    <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="h6 text-warning">REPORTE INVENTARIO</h5>
+                                    </div>
+                                   <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/reporte-stock" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+                                    <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                                    <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="h6 text-warning">CUENTAS POR COBRAR</h5>
+                                    </div>
+                                     <div class="text-center">
+                                    </div>
+                                    </div>
+                                   
+                                </div>
+                                        <a href="/facturacion/reporte-cxc" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+                                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                        <path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="h6 text-warning">VENTAS POR VENDEDOR</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                  
+                                </div>
+                                        <a href="/facturacion/reporte-vendedores" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-earmark-excel" viewBox="0 0 16 16">
+                                        <path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/>
+                                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="h6 text-warning">COMPRAS CLIENTE</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                        <a href="/facturacion/reporte-cliente" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+                                        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                        <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="h6 text-warning">CARGAR IMAGENES CATALOGO</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                    <a href="/actualizar-imagenes-catalogo" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-6 col-12 mb-5">
+                                <div class="card shadow" style="background-color: rgba(41, 41, 41, 0.99);">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between px-md-1">
+                                    <div class="align-self-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                    </svg>
+                                    </div>
+                                    <div class="text-end">
+                                        <h5 class="h6 text-warning">CARGAR INFORMACIÓN SECCIÓN PRINCIPAL</h5>
+                                    </div>
+                                    <div class="text-center">
+                                    </div>
+                                    </div>
+                                </div>
+                                    <a href="/facturacion/editar-componentes-inicio" class="btn btn-warning w-100">ir</a>
+                                </div>
+                            </div>
+                            </div>
+                        </section>
+                    </div>
+               </div>
+
+           </div>
+           
+       </div>
+
+      
+  </main>
+
+  <script src="/js/bootstrap.js"></script>
+    <script>
+        document.addEventListener("keydown", e => {
+            if(e.keyCode == 120 ){
+                window.open('/facturacion/acceso-directo-stock', 'Stock', "width=1400, heigh=100%")
+            }
+        })
+     
+    </script>
+
+
+<footer class="footer" style="background-color: rgba(41, 41, 41, 0.99);">
+    <div class="container-fluid text-center mt-2">
+        <span class="text-muted">SISTEMA ADMINISTRATIVO THOMSON</span>
+    </div>
+</footer>
+</body>
+
+
+</html>

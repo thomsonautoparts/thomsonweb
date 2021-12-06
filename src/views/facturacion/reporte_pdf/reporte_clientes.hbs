@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+<main class="container-fluid">
+     <div class="container-fluid">
+         <img src="/css/assets/logo.png"  class="img-fluid" width="250px" alt="logo">
+     </div>
+     <h3 class="text-center text-dark mt-2">{{Titulo}}</h1>
+     <h3 class="text-danger text-center mt-2">{{mensaje}}</h3>
+     {{#each Facturas}}
+     <div class="table-responsive mt-4">
+            <h4 class="text-center text-dark">{{Cliente}}</h4>
+             <table class="table table-hover table-sm">
+                 <thead class="">
+                     <tr>
+                         <th class="h6 text-dark"  style="font-size: 12px;"><strong>FACTURA</strong></th>
+                         <th class="h6 text-dark"  style="font-size: 12px;"><strong>FECHA</strong></th>
+                         <th class="h6 text-dark"  style="font-size: 12px;"><strong>VENDEDOR</strong></th>
+                         <th class="h6 text-dark"  style="font-size: 12px;"><strong>CANTIDAD TOTAL</strong></th>
+                         <th class="h6 text-dark"  style="font-size: 12px;"><strong>NETO</strong></th>
+                         <th class="h6 text-dark"  style="font-size: 12px;"><strong>SALDO</strong></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     {{#each Facturas}}
+                     <tr>
+                         <td class="h6 text-secondary" style="font-size: 11px;"><strong>{{Fecha}}</strong></td>
+                         <td class="h6 text-secondary" style="font-size: 11px;"><strong>{{Numero}}</strong></td>
+                         <td class="h6 text-secondary" style="font-size: 11px;"><strong>{{Vendedor}}</strong></td>
+                         <td class="h6 text-secondary" style="font-size: 11px;"><strong>{{CantidadTotal}}</strong></td>
+                         <td class="h6 text-secondary" style="font-size: 11px;"><strong>{{PrecioTotal}}</strong></td>
+                         <td class="h6 text-secondary" style="font-size: 11px;"><strong>{{PendienteAPagar}}</strong></td>
+                     </tr>
+                     {{/each}}
+                 </tbody>
+                 <tfoot>
+                     <tr>
+                         <td colspan="4" class="text-danger text-end">TOTALES:</td>
+                         <td class="h6">{{PendienteAPagarTotal}}</td>
+                         <td class="h6">{{PrecioTotalTotal}}</td>
+                     </tr>
+                 </tfoot>
+
+             </table>
+     </div>
+     {{/each}}
+      <div class="table-responsive">
+             <table class="table table-hover table-sm">
+                 <tbody>
+                    <td colspan="3" class="text-danger text-end" style="font-size: 15px;">NETO GENERAL :</td>
+                    <td class=" text-dark" style="font-size: 15px;">{{PrecioTotalGeneral}}</td>
+                    <td class="text-danger text-end" style="font-size: 15px;">SALDO GENERAL:</td>
+                    <td class=" text-dark" style="font-size: 15px;">{{PendienteAPagarGeneral}}</td>
+                 </table>
+             </table>
+      </div>
+ </main>
+    <script>
+        window.print()
+    </script>
+</body>
+
+</html>

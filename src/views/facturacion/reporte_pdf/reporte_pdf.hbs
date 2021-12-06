@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body class="bg-light">
+    <main>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Factura</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Fecha emisión</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Fecha vencimiento</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Cliente</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Vendedor</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Neto</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Saldo</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each facturas}}
+                        <tr>
+                            <td class="text-center h6" style="font-size: 11px;"> {{Factura}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{date}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{Vencimiento}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{Cliente}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{Vendedor}} </td>
+                            <td class="text-center total h6" style="font-size: 11px;"> {{PendienteAPagar}} </td>
+                            <td class="text-center pendiente h6" style="font-size: 11px;"> {{PrecioTotal}} </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+
+                    <tfoot>
+                        <td class="text-center h6" ></td>
+                        <td class="text-center h6" ></td>
+                        <td class="text-center h6" ></td>
+                        <td class="text-center h6" ></td>
+                        <td class="text-center text-danger h6" style="font-size: 12px;">Total:</td>
+                        <td class="text-center h6" id="Total" style="font-size: 12px;"></td>
+                        <td class="text-center h6" id="Pendiente" style="font-size: 12px;"></td>
+                    </tfoot>
+                </table>
+        </div>
+    </main>
+    <script>    
+        const d = document
+        const totales = d.querySelectorAll(".total")
+        const pendientes = d.querySelectorAll(".pendiente")
+        let total = 0
+        let pendiente = 0        
+        console.log(totales.length)
+        for(i=0; i< totales.length; i++ ){
+            total += +totales[i].textContent
+            pendiente += +pendientes[i].textContent
+        d.getElementById("Total").textContent = total
+        d.getElementById("Pendiente").textContent = pendiente
+        }
+        window.print()
+    </script>
+</body>
+</html>

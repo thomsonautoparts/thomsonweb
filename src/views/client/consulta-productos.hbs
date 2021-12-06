@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html id="HTML" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomson</title>
+    <link rel="shortcut icon" href="/css/assets/logo_icon.png" />
+    <script src="/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/thomson.css">
+</head>
+
+<body class="bg-dark">
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="bg-dark2 border-right border-warning" id="sidebar-wrapper">
+            <div class="sidebar-heading text-warning"><img src="/css/assets/logo.png" width="180px" height="30px">
+            </div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/realizar-orden">Realizar
+                    orden</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/anular-orden">Anular
+                    orden</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2"
+                    href="/consultar-productos">Consulta de productos</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/estado-cuenta">Estado de
+                    cuenta</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2"
+                    href="/informacion-garantias">Información de garantias</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2"
+                    href="/consultar-ordenes">Consulta de ordenes</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2"
+                    href="/descargar-lista">Descargar lista</a>
+                <a class="list-group-item noticias-stock text-warning list-group-item-action bg-dark2"href="/noticias">Noticias</a>
+                <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/perfil">Pefil</a>
+            </div>
+        </div>
+        <!-- Page Content-->
+        <div id="page-content-wrapper bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom border-warning">
+                <button class="btn btn-warning" id="menu-toggle">Menú</button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a href="/home-client" class="nav-link text-warning">Inicio</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-success text-light" href="/usuarios/cerrar-sesion">Cerrar
+                                sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <h1 class="mt-4 text-warning text-center">Consulta de productos</h1>
+            <p class="lead text-light text-center" style="font-size: 22px;">En esta sección podrás visualizar todos nuestros
+                 <span class="text-warning">productos</span> con toda su información como también podrás realizar la 
+                 busqueda que desees para llegar mas rapido a lo que estas buscando.
+            </p>
+            <div class="container-fluid">
+            <div class="table-responsive mt-5">
+                <table class="table" id="tabla">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Homólogo</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Posición</th>
+                            <th scope="col">Modelo</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                        <td colspan="6">
+                            <input id="buscar" type="text" class="form-control" placeholder="Escriba su busqueda para filtar" />
+                        </td>
+                    </thead>
+                    <tbody>
+                        {{#each stock}}
+                        <tr style="background-color: rgba(0,0,0,0.3);">
+                            <th class="text-light">{{CodigoT}}</th>
+                            <td class="text-light">{{CodigoG}}</td>
+                            <td class="text-light">{{Descripcion}}</td>
+                            <td class="text-light">{{Posicion}}</td>
+                            <td class="text-light">{{Familia}}</td>
+                            <td class="text-light">${{Precio}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <p style="color: transparent;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+                cumque deleniti nihil
+                aspernatur, rem magnam blanditiis? Iste temporibus molestias fugiat nobis? Pariatur enim maxime
+                reprehenderit cum sit
+                voluptatem doloremque nobis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
+                .</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/sidebars.js"></script>
+    <script>
+        const busqueda = document.getElementById('buscar');
+        const table = document.getElementById("tabla").tBodies[0];
+
+        buscaTabla = function () {
+            texto = busqueda.value.toLowerCase();
+            let r = 0;
+            while (row = table.rows[r++]) {
+                if (row.innerText.toLowerCase().indexOf(texto) !== -1)
+                    row.style.display = null;
+                else
+                    row.style.display = 'none';
+            }
+        }
+
+        busqueda.addEventListener('keyup', buscaTabla);
+    </script>
+</body>
+
+</html>

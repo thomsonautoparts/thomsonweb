@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/facturacion-forms.css">
+      <link rel="stylesheet" href="/css/select.css" />
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="/Facturacion">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="150px" height="30px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facturación</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="nav-link" href="/facturacion/nueva-factura">Nueva-factura</a></li>
+                                <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/por-cobrar">Por cobrar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cobradas">Cobradas</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ventas">Ventas</a></li> <!--Todas -->
+                                        <li><a class="nav-link" href="/facturacion/anular-factura">Anular</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ordenes-compra">Orden de compra</a></li> <!--Pedidos de los clientes-->
+                                        <li><a class="nav-link" href="/facturacion/nueva-cotizacion">Cotización</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/ver-cotizaciones">Ver cotizaciones</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/libro-contable">Libro contable</a></li> <!--Realizar cotizaciones sin afectar stock-->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Cobranza</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/cobranza">
+                                    <p class="name_product nav-link">Cobranza</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/devolucion">
+                                    <p class="name_product nav-link">Realizar Devolución</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todas-devoluciones">
+                                    <p class="name_product nav-link">Devoluciones</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todos-recibos">
+                                    <p class="name_product nav-link">Recibos de pago</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/reporte-cxc">
+                                    <p class="name_product nav-link">Reporte de cuentas por cobrar</p>
+                                </a>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inventario</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Crear Artículo</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/stock">
+                                    <p class="name_product nav-link">Editar Artículo</p>
+                                </a>
+                                      <a class=" dropdown-item text-light" href="/facturacion/registrar-garantias">
+                                    <p class="name_product nav-link">Registrar garantías</p>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/ver-garantias">
+                                    <p class="name_product nav-link">Ver garantías</p>
+                                </a>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/estado-inventario">
+                                    <p class="name_product nav-link">Estado de inventario</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-ajustes">
+                                    <p class="name_product nav-link">Reporte de movimientos</p>
+                                </a>
+                               <a class=" dropdown-item text-light" href="/facturacion/reporte-de-articulos">
+                                    <p class="name_product nav-link">Reporte de articulos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/cambio-masivo-costo">
+                                    <p class="name_product nav-link">Cambio masivo de costos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/reporte-stock">
+                                    <p class="name_product nav-link">Reporte de stock</p>
+                                </a>
+                                  <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Ajuste de inventario</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/descargar-stock">Descargar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cargar-stock">Cargar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+                                <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class=" dropdown-item text-light" href="/facturacion/crear-proveedor">
+                                        <p class="name_product nav-link">Crear</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/editar-proveedor">
+                                        <p class="name_product nav-link">Editar</p>
+                                    </a>
+                                        <a class="dropdown-item text-light" href="/facturacion/realizar-ordenes">
+                                        <p class="name_product nav-link">Realizar orden</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/ordenes-proveedor">
+                                        <p class="name_product nav-link">Lista de ordenes</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/reporte-de-proveedores">
+                                        <p class="name_product nav-link">Reporte de proveedores</p>
+                                    </a>
+                                </ul>
+                            </li>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                            <a class=" dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                <p class="name_product nav-link">Registrar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/clientes">
+                                <p class="name_product nav-link">Editar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/aprobar-usuarios">
+                                <p class="name_product nav-link">Aprobar o rechazar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/pausar-activar-cliente">
+                                <p class="name_product nav-link">Pausar o activar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reporte-cliente">
+                                <p class="name_product nav-link">Reportes</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reportes-precio">
+                                <p class="name_product nav-link">Lista de precios</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/solicitudes-recuperacion-contrasena">
+                                <p class="name_product nav-link">Solicitudes de recuperación</p>
+                            </a>
+                        </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Vendedor</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/vendedores">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/reporte-vendedores">
+                                    <p class="name_product nav-link">Reportes</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-vendedor">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Transporte</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                               <a class=" dropdown-item text-light" href="/facturacion/registrar-transporte">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/transportes">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/activar-inactivar-transporte">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar perfil</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/usuarios">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-usuario">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Comisión</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/comision/por-cancelar">
+                                    <p class="name_product nav-link">Por cancelar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/comision/canceladas">
+                                    <p class="name_product nav-link">Canceladas</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/administracion">
+                                    <p class="name_product nav-link">Libro de entradas y salidas</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/cuentas-por-pagar">
+                                    <p class="name_product nav-link">Cuentas por pagar</p>
+                                </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/agenda">Agenda</a>
+                        </li>
+                        
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+
+                    </ul>
+                       <ul class="navbar-nav ml-0 mr-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                    <button class="btn btn-outline-success" type="button">
+                                        Cerrar sesión
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+  </header>
+    <main id="contenido">
+      <div hidden id="spinner"></div>
+
+        <!--Forms-->
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md" id="message">
+
+                </div>
+
+                {{#each errors}}
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                {{/each}}
+
+                {{#each registrado}}
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{text}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+                {{/each}}
+
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header ">
+                            <h4 class="text-dark mt-2 text-center">Regitro de facturas</h4>
+                        </div>
+                        <form class="form-group" id="form-factura">
+                            <div class="card-body bg-green2 ">
+                                <div class="row">
+                                    <div class="col-md-4 input-group-sm">
+                                        <lable class="text-dark">Fecha de facturación</lable>
+                                        <input type="date" name="date" id="date" value="{{date}}" class="form-control">
+                                    </div>
+                                    <div class="col-md-4 input-group-sm">
+                                        <lable class="text-dark ">Numero de Factura</lable>
+                                        <input type="text" readonly name="Factura" id="numeroFactura"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-4 input-group-sm">
+                                        <lable class="text-dark ">Tipo de precio general:</lable>
+                                        <select class="form-control" id="TipoPrecioGeneral">
+                                            <option value="0">--Seleccione tipo de precio--</option>
+                                            <option value="GRANMAYOR">Gran mayor</option>
+                                            <option value="MAYOR">Mayor</option>
+                                            <option value="DETAL">Detal</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 input-group-sm">
+                                        <label for="" class="text-dark">Selecciona un cliente:</label>
+                                        <select name="Cliente" id="Cliente" class="form-control js-exam">
+                                            <option value="0">--Seleccione cliente--</option>
+                                            {{#each cliente}}
+                                            <option value="{{Empresa}}">{{Empresa}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 input-group-sm">
+                                        <label for="" class="text-dark">Tipo de documento</label>
+                                        <input type="text" name="DocumentoTipo" readonly id="DocumentoTipo"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-4 input-group-sm">
+                                        <label for="" class="text-dark">Numero de documento</label>
+                                        <input type="text" name="Documento" id="Documento" readonly
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Fecha de vencimiento</label>
+                                        <input type="date" name="Vencimiento" id="Vencimiento" class="form-control">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Fecha de vencimiento por dias</label>
+                                        <select name="Vencimiento2" class="form-control" id="Vencimiento2">
+                                            <option value="0">--Seleccione días--</option>
+                                            <option value="5">5 días</option>
+                                            <option value="10">10 días</option>
+                                            <option value="15">15 días</option>
+                                            <option value="30">30 días</option> 
+                                            <option value="60">60 días</option> 
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Direccion fiscal</label>
+                                        <input type="text" name="Direccion" id="Direccion" readonly
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Telefono celular</label>
+                                        <input type="text" name="Telefono" id="Celular" readonly class="form-control">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <label for="" class="text-dark input-group-sm">Agregar nota:</label>
+                                    <div class="col-md">
+                                        <textarea name="Nota" id="Nota" cols="180" class="form-control"
+                                            rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Vendedor</label>
+                                        <select name="Vendedor" id="Vendedor" class="form-control js-exam">
+                                            <option value="0">--Selecione vendedor--</option>
+                                            {{#each vendedor}}
+                                            <option value="{{Username}}">{{Username}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Codigo vendedor</label>
+                                        <input type="text" name="CodigoVendedor" readonly id="CodigoVendedor"
+                                        class="form-control">
+                                    </div>
+                                    <div class="col-md-2 input-group-sm">
+                                        <label for="" class="text-dark">Documento vendedor</label>
+                                        <input type="text" name="DocumentoVendedor" readonly id="DocumentoVendedor"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-2 input-group-sm">
+                                        <label for="" class="text-dark">Zona vendedor</label>
+                                        <input type="text" name="ZonaVendedor" readonly id="ZonaVendedor"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-2 input-group-sm">
+                                        <label for="" class="text-dark">Porcentaje</label>
+                                        <input type="number" name="Porcentaje" step="any" min="1" id="Porcentaje"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Transporte:</label>
+                                        <select name="Transporte" id="Transporte" class="form-control js-exam">
+                                            <option value="0">--Seleccione una empresa de Transporte--</option>
+                                            {{#each transporte}}
+                                            <option value="{{Username}}">{{Username}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Empresa</label>
+                                        <input type="text" readonly class="form-control" id="EmpresaTransporte">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Vehiculo</label>
+                                        <input type="text" readonly class="form-control" id="VehiculoTransporte">
+                                    </div>
+                                    <div class="col-md-3 input-group-sm">
+                                        <label for="" class="text-dark">Placa</label>
+                                        <input type="text" readonly class="form-control" id="PlacaTransporte">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="card-body bg-green2">
+                            <form class="form-group" id="formDetalle">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="" class="text-dark">Codigo:</label>
+                                        <select name="Codigo" id="Codigo" class="form-control js-exam">
+                                            <option value="0">--Seleccione codigo--</option>
+                                            {{#each stock}}
+                                            <option value="{{_id}}">{{CodigoT}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="" class="text-dark">Homolgo:</label>
+                                        <input type="text" name="Homoglo" readonly id="Homologo" class="form-control">
+                                    </div>
+                                    <div class="col-md-2" class="text-dark">
+                                        <label for="" class="text-dark">Tipo de precio:</label>
+                                        <select name="TipoPrecio" id="TipoPrecio" class="form-control">
+                                        </select>
+                                    </div>
+                                    <div class="col-md-1" class="text-dark">
+                                        <label for="" class="text-dark">Precio:</label>
+                                        <input type="number" name="precioUnidad" step="any" id="precioUnidad"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label for="" class="text-dark">En stock:</label>
+                                        <input type="number" name="Cantidad2" min="1" placeholder="Cantidad"
+                                            id="Cantidad2" readonly class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="" class="text-dark">Cantidad a facturar:</label>
+                                        <input type="number" name="Cantidad" min="1" placeholder="Cantidad"
+                                            id="Cantidad" class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label for="" class="text-dark">Precio Total</label>
+                                        <input type="number"  name="precioTotal" step="any" id="precioTotal"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button type="submit" class="btn btn-outline-success mt-4 text-dark">+</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped table-hover table-sm">
+                                <thead class="">
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Producto</th>
+                                        <th>Modelo</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio unitario</th>
+                                        <th>Precio Total</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyTabla">
+                                    
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <button type="submit" class="btn btn-outline-success text-light" id="guardarFactura">Guardar
+                            Factura</button>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+
+
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/js/facturacion/nueva-factura.js"></script>
+    <script>
+        document.addEventListener("keydown", e => {
+            if(e.keyCode == 120 ){
+                window.open('/facturacion/acceso-directo-stock', 'Stock', "width=1400, heigh=100%")
+            }
+        })
+    </script>
+
+<footer class="footer" style="background-color: rgba(41, 41, 41, 0.99);">
+    <div class="container-fluid text-center mt-2">
+        <span class="text-muted">SISTEMA ADMINISTRATIVO THOMSON</span>
+    </div>
+</footer>
+</body>
+
+</html>

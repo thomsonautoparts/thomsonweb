@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <main>
+        <h1 class="text-center text-dark">Reporte de movimientos</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Codigo movimiento</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Tipo movimiento</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Codigo Thomson</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Fecha de movimiento</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Cantidad anterior</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Cantidad movida</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>Cantidad nueva</strong></th>
+                            <th class="h6 text-center" style="font-size: 12px;"><strong>comentario</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each Historiales}}
+                        <tr>
+                            <td class="text-center h6" style="font-size: 11px;"> {{CodigoMovimiento}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{TipoMovimiento}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{Codigo}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{FechaMovimiento}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{CantidadAnterior}} </td>
+                            <td class="text-center h6" style="font-size: 11px;"> {{CantidadMovida}} </td>
+                            <td class="text-center cantidad h6" style="font-size: 11px;"> {{CantidadNueva}} </td>
+                            <td class="text-center costo1 h6" style="font-size: 11px;"> {{Comentario}} </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+
+                </table>
+        </div>
+    </main>
+    <script>
+        window.print()
+    </script>
+</body>
+
+</html>

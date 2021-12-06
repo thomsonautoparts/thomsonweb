@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12" style="margin-left: 10px;">
+                <strong class="text-dark">Fecha:</strong> <span class="text-dark">{{date}}</span>
+            </div>
+            <div class="col-sm-12" style="margin-left: 10px;">
+                <strong class="text-dark">Cliente:</strong> <span class="text-dark">{{Cliente}}</span>
+            </div>
+            <div class="col-sm-12" style="margin-left: 10px;">
+                <strong class="text-dark">Código de orden:</strong> <span class="text-dark">{{OrdenNumero}}</span>
+            </div>
+            <div class="col-sm-12" style="margin-left: 10px;">
+                <strong class="text-dark">Cantidad total:</strong> <span class="text-dark">{{CantidadTotal}}</span>
+            </div>
+            <div class="col-sm-12" style="margin-left: 10px;">
+                <strong class="text-dark">Precio total:</strong> <span class="text-dark">${{PrecioTotal}}</span>
+            </div>
+            <div class="col-sm-12" style="margin-left: 10px;">
+                <strong class="text-dark">Estado:</strong> <span class="text-dark">{{Estado}}</span>
+            </div>
+        </div>
+        <h3 class="text-center text-dark">Orden <strong>{{OrdenNumero}}</strong></h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-sm">
+                <thead class="">
+                    <tr>
+                        <th class="h6" style="font-size: 12px;"><strong>Código Thomson</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Código homólogo</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Tipo producto</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Descrpción</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Posición</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Cantidad total</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Precio Unidad</strong></th>
+                        <th class="h6" style="font-size: 12px;"><strong>Precio Total</strong></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    {{#each productos}}
+                    <tr>
+                        <td class="h6" style="font-size: 11px;">{{CodigoT}}</td>
+                        <td class="h6" style="font-size: 11px;">{{CodigoG}}</td>
+                        <td class="h6" style="font-size: 11px;">{{TipoProducto}}</td>
+                        <td class="h6" style="font-size: 11px;">{{Descripcion}}</td>
+                        <td class="h6" style="font-size: 11px;">{{Posicion}}</td>
+                        <td class="h6" style="font-size: 11px;">{{Cantidad}}</td>
+                        <td class="h6" style="font-size: 11px;">{{PrecioUnidad}}</td>
+                        <td class="h6" style="font-size: 11px;">{{PrecioTotal}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        window.print()
+    </script>
+</body>
+</html>

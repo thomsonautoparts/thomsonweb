@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html id="HTML" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomson - Catalogue</title>
+    <link rel="shortcut icon" href="/css/assets/logo_icon.png" />
+    <link rel="stylesheet" href="/css/bootstrap2.css">
+    <script src="/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/thomson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+</head>
+
+<body>
+    <div hidden id="spinner"></div>
+    <header id="header">
+    </header>
+    
+    <main id="main">
+          <div id="myCarousel" class="carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/css/assets/catalogo.jpg"  class="carousel_image zoom-efect" alt="">
+          <div class="container">
+            <div class="carousel-caption text-start text-light">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container mb-5">
+        <div class="row mb-5" id="alert">
+            <div class="col-sm-12">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Search by code</label>
+                            <input type="search" name="Code" class="form-control bg-dark text-light border-inputs"
+                                placeholder="Introduce a code" id="Code">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Search by description</label>
+                            <input type="search" name="Description"
+                                class="form-control bg-dark text-light border-inputs" id="Description"
+                                placeholder="Introduce a description">
+                        </div>
+                        <div class="col-md-4" style="margin-top: 12px;">
+                            <button class="btn btn-secondary w-100 mt-4" id="submit">Search</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="" class="my-1 mr-1 mt-1" for="inlineFormCustomSelectPref">Product type:</label>
+                        <select class="form-control bg-dark text-light border-inputs" name="ProductType"
+                            id="ProductType">
+                            <option selected value="0">-Select product-</option>
+                            <option value="SHOCK">Shock absorber</option>
+                            <option value="STRUT">Strut mount</option>
+                            <option value="BOOT">Boot</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="" class="my-1 mr-1 mt-1" for="inlineFormCustomSelectPref">Vehicle Type:</label>
+                        <select class="form-control bg-dark text-light border-inputs" name="mark" id="VehicleType"
+                            name="VehicleType">
+                            <option selected value="0">-Select a vehicle-</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="my-1 mr-1 mt-1" for="inlineFormCustomSelectPref">Mark car:</label>
+                        <select name="Mark" id="Mark" class="border-inputs bg-dark text-light form-control" style="color: white;">
+                            <option value="0">--Select a mark--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <label for="" class="my-1 mr-2 mt-1" for="inlineFormCustomSelectPref">Model Car:</label>
+                        <select name="Model" id="Model" class="bg-dark text-light form-control border-inputs">
+                            <option selected value="Select date">-Select a model-</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="" class="my-1 mt-1" for="inlineFormCustomSelectPref">Year Car:</label>
+                        <select name="Year" id="Year" class="bg-dark text-light form-control border-inputs">
+                            <option selected value="Select date">-Select a year-</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="table">
+        </div>
+    </div>
+
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <hr class="featurette-divider">
+    <footer class="container mt-0 mb-0 pt-0 pb-0">
+        <p class="float-end"><a href="#" class="back_top"><svg xmlns="http://www.w3.org/2000/svg" width="25px"
+                    height="25px" fill="currentColor" class="bi bi-arrow-up-circle mt-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                </svg></a></p><br>
+        <p class="text-light h6">&copy; THOMSON</p>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="/js/catalogue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+</body>
+
+</html>

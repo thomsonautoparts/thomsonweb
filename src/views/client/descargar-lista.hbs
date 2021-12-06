@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html id="HTML" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomson</title>
+    <link rel="shortcut icon" href="/css/assets/logo_icon.png" />
+    <script src="/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/thomson.css">
+</head>
+
+<body class="bg-dark">
+  <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="bg-dark2 border-right border-warning" id="sidebar-wrapper">
+                <div class="sidebar-heading text-warning"><img src="/css/assets/logo.png" width="180px" height="30px"> </div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/realizar-orden">Realizar orden</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/anular-orden">Anular orden</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/consultar-productos">Consulta de productos</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/estado-cuenta">Estado de cuenta</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/informacion-garantias">Información de garantias</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/consultar-ordenes">Consulta de ordenes</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/descargar-lista">Descargar lista</a>
+                    <a class="list-group-item noticias-stock text-warning list-group-item-action bg-dark2"href="/noticias">Noticias</a>
+                    <a class="list-group-item text-warning list-group-item-action bg-dark2" href="/perfil">Pefil</a>
+                </div>
+            </div>
+            <!-- Page Content-->
+            <div id="page-content-wrapper bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom border-warning" >
+                    <button class="btn btn-warning" id="menu-toggle">Menú</button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                              <a href="/home-client" class="nav-link text-warning">Inicio</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-success text-light" href="/usuarios/cerrar-sesion">Cerrar sesión</a>
+                              </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <h1 class="mt-4 text-warning text-center">Descargar lista de precios</h1>
+                    <p class="lead text-light text-center" style="font-size: 22px;">En esta sección podrás descargar la lista de precios tanto en formato
+                        <span class="text-success">EXCEL</span> como también en <span class="text-danger">PDF</span>.
+                    </p>
+                    <hr class="bg-warning">
+                    <div class="row mt-5">
+                        <div class="col-sm-6 text-right mt-3">
+                            <a href="/lista-excel/{{usuario.TipoPrecio}}"  id="img1"><img src="/css/assets/excel.png" class="mr-4" width="150px" height="150px"> <br> <figcaption class="btn btn-warning">Descargar lista en Excel</figcaption></a>
+                        </div>
+                        <div class="col-sm-6 mt-3 text-start">
+                            <a href="/lista-pdf/{{usuario.TipoPrecio}}" id="img2" ><img src="/css/assets/pdf.png" class="ml-3" width="145px" height="150px"> <br> </button><figcaption class="btn btn-warning">Descargar lista en PDF</figcaption></a>
+                        </div>
+                    </div>
+                     <p style="color: transparent;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+                    cumque deleniti nihil
+                    aspernatur, rem magnam blanditiis? Iste temporibus molestias fugiat nobis? Pariatur enim maxime
+                    reprehenderit cum sit
+                    voluptatem doloremque nobis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum,
+                    ducimus hic sequi sed nulla quidem doloribus consequatur dolores deserunt iusto. Eveniet animi omnis
+                    eum maxime esse dolor aperiam qui cumque.</p>
+                    
+                </div>
+            </div>
+        </div>
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/sidebars.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if(screen.width < 600) {
+            document.getElementById("img1").parentElement.classList.remove("text-right")
+            document.getElementById("img1").parentElement.classList.add("text-center")
+            document.getElementById("img2").parentElement.classList.remove("text-right")
+            document.getElementById("img2").parentElement.classList.add("text-center")
+            document.getElementById("img2").firstElementChild.classList.remove("ml-3")
+            document.getElementById("img2").firstElementChild.classList.add("ml-1")
+        }
+    })
+</script>
+</body>
+
+</html>

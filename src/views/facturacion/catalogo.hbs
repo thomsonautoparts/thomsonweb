@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/facturacion-forms.css" />
+    <link rel="stylesheet" href="/css/select.css" />
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+   <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="thomson">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="200px" height="40px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mr-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Facturacion" aria-current="page">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/nueva-factura">Nueva factura</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/stock">Stock</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/clientes">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/vendedores">Vendedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/facturas">Facturas</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="download dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Stock</p>
+                                </a>
+                                <a class="download dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                    <p class="name_product nav-link">Cliente</p>
+                                </a>
+                                <a class="download dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Vendedor</p>
+                                </a>
+                                <a class="download dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Usuarios administrativos</p>
+                                </a>
+                                <a class="download dropdown-item text-light"
+                                    href="/facturacion/registrar-usuario-cliente">
+                                    <p class="name_product nav-link">Usuarios clientes</p>
+                                </a>
+                                <a class="download dropdown-item text-light" href="/facturacion/registrar-automovil">
+                                    <p class="name_product nav-link">automoviles</p>
+                                </a>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/aprobar-usuarios">Aprobación de usuarios clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                <button class="btn btn-outline-success" type="button">
+                                    Cerrar sesión
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="container-fluid mt-4">
+            <div class="row">
+
+                <div class="col-md">
+
+                    <div class="container-fluid mt-2">
+                        <di id="Contenedor"></di>
+                        {{#each errors}}
+
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{text}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        {{/each}}
+                        {{#each ok}}
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{text}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        {{/each}}
+
+
+                        <div class="card mt-2">
+                            <div class="card">
+
+                                <div class="card-header">
+                                    <h4 class="text-dark text-center">Registrar catalogo</h3>
+                                </div>
+                                <form action="" id="Detalle1">
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-3">
+                            <div class="card">
+
+                                </form>
+                                <form action="Catalogo" id="Detalle" method="POST">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <label for="">Codigo Thomson</label>
+                                                <input type="text" name="CodigoT" id="" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="">Codigo Gabriel</label>
+                                                <input type="text" name="CodigoG" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="">Tipo de producto</label>
+                                                <select name="TipoProducto" id="" class="form-control">
+                                                    <option value="0">--Seleccione producto--</option>
+                                                    <option value="Shock">Shock absorber</option>
+                                                    <option value="Strut">Strut mount</option>
+                                                    <option value="Boot">Boot</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="">Nombre</label>
+                                                <select name="Nombre" id="Nombre" class="form-control">
+                                                    <option value="0">--Seleccione nombre--</option>
+                                                    <option value="Original Thomson">Original Thomson</option>
+                                                    <option value="Thomson Heavy Duty">Thomson Heavy Duty</option>
+                                                    <option value="Pro-Thomson">Pro-Thomson</option>
+                                                    <option value="Thomson Truck-Plus">Thomson Truck-Plus</option>
+                                                    <option value="Direction shock absorber">Direction shock absorber
+                                                    </option>
+                                                    <option value="Strut mount">Strut mount</option>
+                                                    <option value="Boot">Boot</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="" class="text-dark">Tipo de vehiculo:</label>
+                                                <select class="form-control text-dark js-exam" id="TipoVehiculo"
+                                                    name="TipoVehiculo">
+                                                    <option value="0">--Seleccione vehiculo--</option>
+                                                    <option value="Car">Car</option>
+                                                    <option value="Truck">Truck</option>
+                                                    <option value="Heavy-truck">Heavy truck</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="" class="text-dark">Marca:</label>
+                                                <select class="form-control text-dark js-exam" id="Marca" name="Marca">
+                                                    <option value="0">--Seleccione marca--</option>
+                                                    <option value="CHERRY">CHERRY</option>
+                                                    <option value="CHEVROLET ">CHEVROLET </option>
+                                                    <option value="DODGE ">DODGE </option>
+                                                    <option value="DAEWO ">DAEWO </option>
+                                                    <option value="FIAT ">FIAT </option>
+                                                    <option value="FORD ">FORD </option>
+                                                    <option value="HONDA ">HONDA </option>
+                                                    <option value="HYUNDAI">HYUNDAI</option>
+                                                    <option value="IVECO ">IVECO </option>
+                                                    <option value="JEEP ">JEEP </option>
+                                                    <option value="KIA ">KIA </option>
+                                                    <option value="MAZDA ">MAZDA </option>
+                                                    <option value="MITSUBISHI ">MITSUBISHI </option>
+                                                    <option value="NISSAN ">NISSAN </option>
+                                                    <option value="PEUGEOT">PEUGEOT</option>
+                                                    <option value="RENAULT ">RENAULT </option>
+                                                    <option value="SEAT ">SEAT </option>
+                                                    <option value="TOYOTA ">TOYOTA </option>
+                                                    <option value="VENIRAUTO ">VENIRAUTO </option>
+                                                    <option value="WOLKSWAGEN">WOLKSWAGEN</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="" class="text-dark">Modelo:</label>
+                                                <select class="form-control text-dark js-exam" id="Modelo"
+                                                    name="Modelo">
+                                                    <option value="0">--Seleccione Modelo--</option>
+                                                    <option value="ARAUCA">ARAUCA</option>
+                                                    <option value="ORINOCO">ORINOCO</option>
+                                                    <option value="QQ">QQ</option>
+                                                    <option value="X1">X1</option>
+                                                    <option value="TIGGO">TIGGO</option>
+                                                    <option value="ASTRA">ASTRA</option>
+                                                    <option value="AVEO">AVEO </option>
+                                                    <option value="CAVALIER Z24 SUNFIRE">CAVALIER Z24 SUNFIRE</option>
+                                                    <option value="CORSA">CORSA</option>
+                                                    <option value="CRUZE">CRUZE</option>
+                                                    <option value="ESTEEM">ESTEEM</option>
+                                                    <option value="EPICA">EPICA</option>
+                                                    <option value="IMPALA">IMPALA</option>
+                                                    <option value="LUMINA SEDAN">LUMINA SEDAN </option>
+                                                    <option value="MALIBU">MALIBU </option>
+                                                    <option value="MERIVA - MONTANA">MERIVA - MONTANA </option>
+                                                    <option value="MONTE CARLO">MONTE CARLO</option>
+                                                    <option value="OPTRA">OPTRA</option>
+                                                    <option value="SPARK">SPARK</option>
+                                                    <option value="SPARK">SPARK</option>
+                                                    <option value="AVALANCHE 1500">AVALANCHE 1500 </option>
+                                                    <option value="AVALANCHE 1500"> AVALANCHE 1500 </option>
+                                                    <option value="AVALANCHE 1500">AVALANCHE 1500</option>
+                                                    <option value="AVALANCHE 2500 "> AVALANCHE 2500 </option>
+                                                    <option value="AVALANCHE 2500">AVALANCHE 2500</option>
+                                                    <option value="BLAZER 4X2"> BLAZER 4X2 </option>
+                                                    <option value="BLAZER 4X4">BLAZER 4X4</option>
+                                                    <option value="CAPTIVA">CAPTIVA</option>
+                                                    <option value="COLORADO 4X2 4X4">COLORADO 4X2 4X4</option>
+                                                    <option value="EXPRESS">EXPRESS</option>
+                                                    <option value="GRAND VITARA SUZUKI">GRAND VITARA SUZUKI </option>
+                                                    <option value="GRAND VITARA XL5 XL7">GRAND VITARA XL5 XL7 </option>
+                                                    <option value="LUV D MAX">LUV D MAX </option>
+                                                    <option value="LUV D MAX TURBO DIESEL">LUV D MAX TURBO DIESEL
+                                                    </option>
+                                                    <option value="SILVERADO 1500 4X2">SILVERADO 1500 4X2</option>
+                                                    <option value="SILVERADO 4X4">SILVERADO 4X4</option>
+                                                    <option value="SILVERADO 2500">SILVERADO 2500</option>
+                                                    <option value="SILVERADO 4X2 4X4">SILVERADO 4X2 4X4</option>
+                                                    <option value="SUPER CARRY">SUPER CARRY </option>
+                                                    <option value="TAHOE 1500 2500 4X2 4X4">TAHOE 1500 2500 4X2 4X4
+                                                    </option>
+                                                    <option value="TRAIL BLAZER">TRAIL BLAZER </option>
+                                                    <option value="C3500HD 4X2 4X4">C3500HD 4X2 4X4</option>
+                                                    <option value="C3500 CHEYENNE">C3500 CHEYENNE </option>
+                                                    <option value="SILVERADO 3500 4X2 4X4">SILVERADO 3500 4X2 4X4
+                                                    </option>
+                                                    <option value="WAGON R">WAGON R </option>
+                                                    <option value="KODIAK SERIE C SERIE T SERIE P">KODIAK SERIE C SERIE
+                                                        T
+                                                        SERIE P </option>
+                                                    <option value="FVR">FVR </option>
+                                                    <option value="NHR">NHR </option>
+                                                    <option value="NPR">NPR </option>
+                                                    <option value="NEON - PT CRUISER">NEON - PT CRUISER </option>
+                                                    <option value="NEON">NEON </option>
+                                                    <option value="BRISA">BRISA </option>
+                                                    <option value="CALIBER">CALIBER </option>
+                                                    <option value="STRATUS-SEBRING">STRATUS-SEBRING</option>
+                                                    <option value="DAKOTA">DAKOTA </option>
+                                                    <option value="CARAVAN">CARAVAN </option>
+                                                    <option value="RAM 1500 4X2">RAM 1500 4X2 </option>
+                                                    <option value="RAM 1500 4X4">RAM 1500 4X4</option>
+                                                    <option value="RAM 1500 2500 4X4">RAM 1500 2500 4X4</option>
+                                                    <option value="RAM 1500 2500 3500 4X2">RAM 1500 2500 3500 4X2
+                                                    </option>
+                                                    <option value="RAM 3500 4X4">RAM 3500 4X4 </option>
+                                                    <option value="MATIZ">MATIZ </option>
+                                                    <option value="TICO">TICO </option>
+                                                    <option value="IDEA">IDEA </option>
+                                                    <option value="PALIO">PALIO </option>
+                                                    <option value="ADVENTURE">ADVENTURE </option>
+                                                    <option value="SIENA">SIENA </option>
+                                                    <option value="SIENA FIRE">SIENA FIRE </option>
+                                                    <option value="UNO">UNO</option>
+                                                    <option value="FIESTA">FIESTA</option>
+                                                    <option value="FIESTA POWER">FIESTA POWER </option>
+                                                    <option value="FIESTA TITANIUM">FIESTA TITANIUM </option>
+                                                    <option value="FOCUS">FOCUS</option>
+                                                    <option value="FUSION">FUSION </option>
+                                                    <option value="FESTIVA">FESTIVA</option>
+                                                    <option value="KA">KA</option>
+                                                    <option value="MUSTANG">MUSTANG</option>
+                                                    <option value="ECO SPORT 4X4">ECO SPORT 4X4</option>
+                                                    <option value="ECO SPORT 4X2">ECO SPORT 4X2</option>
+                                                    <option value="ESCAPE 4X2 4X4">ESCAPE 4X2 4X4</option>
+                                                    <option value="EXPLORER XLT 4X2 4X4">EXPLORER XLT 4X2 4X4</option>
+                                                    <option value="EXPLORER XLT 4X2 4X5">EXPLORER XLT 4X2 4X5</option>
+                                                    <option value="EXPLORER 4X2 4X4">EXPLORER 4X2 4X4 </option>
+                                                    <option value="EXPLORER EDDIE BAUER">EXPLORER EDDIE BAUER </option>
+                                                    <option value="EXPLORER LIMITED 3.5">EXPLORER LIMITED 3.5 </option>
+                                                    <option value="FX4">FX4</option>
+                                                    <option value="F150 4X2">F150 4X2 </option>
+                                                    <option value="F150 FORTALEZA 4X2">F150 FORTALEZA 4X2</option>
+                                                    <option value="F150 FORTALEZA 4X4">F150 FORTALEZA 4X4</option>
+                                                    <option value="RANGER">  RANGER </option>
+                                                    <option value="F250 CAB SENC,DOBLE CAB SUPER DUTY 4X2">F250 CAB
+                                                        SENC,DOBLE CAB SUPER DUTY 4X2</option>
+                                                    <option value="F250 CAB SENC,DOBLE CAB SUPER DUTY 4X2 4X4">F250 CAB
+                                                        SENC,DOBLE CAB SUPER DUTY 4X2 4X4</option>
+                                                    <option value="F250 CAB SENC,DOBLE CAB SUPER DUTY 4X4">F250 CAB
+                                                        SENC,DOBLE CAB SUPER DUTY 4X4</option>
+                                                    <option value="F350 4X2">F350 4X2</option>
+                                                    <option value="F350 4X4">F350 4X4</option>
+                                                    <option value="F350 TRITON SUPER DITY 4X2">F350 TRITON SUPER DITY
+                                                        4X2
+                                                    </option>
+                                                    <option value="F350 TRITON SUPER DITY 4X4">F350 TRITON SUPER DITY
+                                                        4X4
+                                                    </option>
+                                                    <option value="F450 SUPER DUTY 4X2 4X4">F450 SUPER DUTY 4X2 4X4
+                                                    </option>
+                                                    <option value="F8000">F8000</option>
+                                                    <option value="FORD CARGO 1721">FORD CARGO 1721</option>
+                                                    <option value="SUPER DUTY F350 4X2">SUPER DUTY F350 4X2</option>
+                                                    <option value="SUPER DUTY F350 4X4">SUPER DUTY F350 4X4</option>
+                                                    <option value="EXPLORER SPORT TRAC">EXPLORER SPORT TRAC </option>
+                                                    <option value="RANGER DOBLE CABINA">RANGER DOBLE CABINA </option>
+                                                    <option value="CARGO 815">CARGO 815</option>
+                                                    <option value="CARGO 1716 1722 1730">CARGO 1716 1722 1730</option>
+                                                    <option value="ACCORD">ACCORD </option>
+                                                    <option value="CIVIC">CIVIC</option>
+                                                    <option value="FIT">FIT</option>
+                                                    <option value="ACCENT">ACCENT</option>
+                                                    <option value="ATOS">ATOS</option>
+                                                    <option value="ELANTRA">ELANTRA</option>
+                                                    <option value="GETZ">GETZ</option>
+                                                    <option value="SONATA">SONATA</option>
+                                                    <option value="TIBURON">TIBURON</option>
+                                                    <option value="H1">H1</option>
+                                                    <option value="SANTA FE">SANTA FE</option>
+                                                    <option value="TUCSON">TUCSON</option>
+                                                    <option value="H100">H100</option>
+                                                    <option value="DAILY">DAILY</option>
+                                                    <option value="CHEROKEE LIBERTY KJ">CHEROKEE LIBERTY KJ</option>
+                                                    <option value="CHEROKEE LIBERTY KK">CHEROKEE LIBERTY KK</option>
+                                                    <option value="CHEROKEE KJ 4X2">CHEROKEE KJ 4X2</option>
+                                                    <option value="CHEROKEE KJ 4X4">CHEROKEE KJ 4X4</option>
+                                                    <option value="GRAND CHEROKEE WJ ">GRAND CHEROKEE WJ</option>
+                                                    <option value="GRAND CHEROKEE WK ">GRAND CHEROKEE WK</option>
+                                                    <option value="CHEROKEE">CHEROKEE</option>
+                                                    <option value="GRAND CHEROKEE WK2 ">GRAND CHEROKEE WK2</option>
+                                                    <option value="OPTIMA">OPTIMA</option>
+                                                    <option value="PICANTO">PICANTO</option>
+                                                    <option value="RIO">RIO</option>
+                                                    <option value="RIO STYLUS">RIO STYLUS</option>
+                                                    <option value="SEPHIA">SEPHIA</option>
+                                                    <option value="SEDONA">SEDONA</option>
+                                                    <option value="SORRENTO">SORRENTO</option>
+                                                    <option value="PREGIO">PREGIO</option>
+                                                    <option value="SPORTAGE">SPORTAGE</option>
+                                                    <option value="M3">M3</option>
+                                                    <option value="M5">M5</option>
+                                                    <option value="M6">M6</option>
+                                                    <option value="DEMIO">DEMIO</option>
+                                                    <option value="B2600">B2600</option>
+                                                    <option value="B2300">B2300</option>
+                                                    <option value="BT-50 4X2">BT-50 4X2</option>
+                                                    <option value="BT-50 4X4">BT-50 4X4</option>
+                                                    <option value="LANCER 1.3 1.5">LANCER 1.3 1.5</option>
+                                                    <option value="LANCER 1.3 1.5 1.8">LANCER 1.3 1.5 1.8</option>
+                                                    <option value="LANCER 2.0 TOURING">LANCER 2.0 TOURING </option>
+                                                    <option value="LANCER GLX 1.6">LANCER GLX 1.6</option>
+                                                    <option value="SIGNO">SIGNO </option>
+                                                    <option value="MONTERO DAKAR">MONTERO DAKAR</option>
+                                                    <option value="PANEL L300">PANEL L300</option>
+                                                    <option value="MONTERO ">MONTERO</option>
+                                                    <option value="MONTERO SPORT ">MONTERO SPORT</option>
+                                                    <option value="CANTER">CANTER</option>
+                                                    <option value="ALTIMA">ALTIMA</option>
+                                                    <option value="MAXIMA">MAXIMA</option>
+                                                    <option value="SENTRA B13">SENTRA B13</option>
+                                                    <option value="SENTRA B15">SENTRA B15</option>
+                                                    <option value="TIIDA">TIIDA</option>
+                                                    <option value="ARMADA ">ARMADA</option>
+                                                    <option value="MURANO ">MURANO</option>
+                                                    <option value="FRONTIER 4X2">FRONTIER 4X2</option>
+                                                    <option value="FRONTIER 4X4">FRONTIER 4X4</option>
+                                                    <option value="PATHFINDER ">PATHFINDER</option>
+                                                    <option value="X TERRA">X TERRA</option>
+                                                    <option value="P206">P206</option>
+                                                    <option value="P207">P207</option>
+                                                    <option value="CLIO">CLIO</option>
+                                                    <option value="CLIO II"> CLIO II </option>
+                                                    <option value="LOGAN">LOGAN </option>
+                                                    <option value="MEGANE"> MEGANE </option>
+                                                    <option value="MEGANNE II">MEGANNE II</option>
+                                                    <option value="SANDERO">SANDERO</option>
+                                                    <option value="SCENIC">SCENIC</option>
+                                                    <option value="SYMBOL">SYMBOL</option>
+                                                    <option value="TWINGO">TWINGO</option>
+                                                    <option value="KANGOO">KANGOO</option>
+                                                    <option value="LEON TOLEDO">LEON TOLEDO</option>
+                                                    <option value="CAMRY">CAMRY</option>
+                                                    <option value="COROLLA NEW SENSATION">COROLLA NEW SENSATION</option>
+                                                    <option value="COROLLA">COROLLA</option>
+                                                    <option value="YARIS">YARIS</option>
+                                                    <option value="YARIS BELTA ">YARIS BELTA</option>
+                                                    <option value="4RUNNER">4RUNNER</option>
+                                                    <option value="FJ CRUISER">FJ CRUISER </option>
+                                                    <option value="FJ70 MACHITO 45 FJ75 PICKUP 45">FJ70 MACHITO 45 FJ75
+                                                        PICKUP 45</option>
+                                                    <option value="FJ79 MACHITO 45">FJ79 MACHITO 45</option>
+                                                    <option value="FORTUNER">FORTUNER</option>
+                                                    <option value="FZJ80 AUTANA BURBUJA">FZJ80 AUTANA BURBUJA</option>
+                                                    <option value="HI LUX 4X2">HI LUX 4X2</option>
+                                                    <option value="HI LUX 4X4">HI LUX 4X4</option>
+                                                    <option value="HI LUX  KAVAC">HI LUX KAVAC</option>
+                                                    <option value="PRADO MERU">PRADO MERU</option>
+                                                    <option value="PREVIA">PREVIA</option>
+                                                    <option value="RAV4 4X2 4X4">RAV4 4X2 4X4</option>
+                                                    <option value="TERIOS">TERIOS</option>
+                                                    <option value="TUNDRA">TUNDRA</option>
+                                                    <option value="DINA">DINA</option>
+                                                    <option value="CENTAURO">CENTAURO</option>
+                                                    <option value="TURPIAL">TURPIAL</option>
+                                                    <option value="BEETLE">BEETLE</option>
+                                                    <option value="BORA">BORA</option>
+                                                    <option value="CROSS FOX">CROSS FOX</option>
+                                                    <option value="FOX">FOX</option>
+                                                    <option value="GOL">GOL</option>
+                                                    <option value="GOLF">GOLF</option>
+                                                    <option value="GOLF A4">GOLF A4</option>
+                                                    <option value="GOLF GTI">GOLF GTI</option>
+                                                    <option value="JETTA A4">JETTA A4</option>
+                                                    <option value="JETTA A5">JETTA A5</option>
+                                                    <option value="PASSAT">PASSAT</option>
+                                                    <option value="SPACE FOX">SPACE FOX</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="" class="text-dark">Desde (Año):</label>
+                                                <input type="number" name="Desde" class="form-control" id="Desde"
+                                                    min="1970" max="2099" step="1" value="{{Desde}}"
+                                                    placeholder="2000" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="" class="text-dark">Hasta (Año):</label>
+                                                <input type="number" name="Hasta" class="form-control" id="Hasta"
+                                                    min="1970" max="2099" step="1" value="{{Hasta}}"
+                                                    placeholder="2000" />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="" class="text-dark">Posicion:</label>
+                                                <select name="Posicion" id="Posicion" class="form-control">
+                                                    <option value="0">--Posicion--</option>
+                                                    <option value="Delanteros">Delanteros</option>
+                                                    <option value="Delantero derecho">Delantero derecho</option>
+                                                    <option value="Delantero izquierdo">Delantero izquierdo</option>
+                                                    <option value="Traseros">Traseros</option>
+                                                    <option value="Traseros derecho">Trasero derecho</option>
+                                                    <option value="Traseros izquierdo">Trasero izquierdo</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="" class="text-dark">Modelo del Producto</label>
+                                                <select name="Familia" id="Familia" class="form-control">
+                                                    <option value="0">--Modelo--</option>
+                                                    <option value="Conventional">Conventional</option>
+                                                    <option value="Mcpherson">Mcpherson</option>
+                                                    <option value="Strut">Strut mount</option>
+                                                    <option value="Boot">Boot</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <input type="submit" value="Registrar producto" class="mt-2 btn btn-outline-success"
+                                id="GuardarStock">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="/js/facturacion/registrar-stock.js"></script>
+
+</body>
+
+</html>

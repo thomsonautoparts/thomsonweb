@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                <p class="text-dark h6">Cantidad Mcpherson: <strong>{{Orden.cantidadMcpherson}}</strong></p>
+                <p class="text-dark h6">Cantidad Convencional: <strong>{{Orden.cantidadConvencional}}</strong></p>
+                <p class="text-dark h6">Cantidad bases: <strong>{{Orden.cantidadBase}}</strong></p>
+                <p class="text-dark h6">Cantidad guardapolvos: <strong>{{Orden.cantidadGuardapolvo}}</strong></p>
+                <p class="text-dark h6">Cantidad total: <strong>{{Orden.CantidadTotal}}</strong></p>
+                <p class="text-dark h6">Precio total: <strong>${{Orden.PrecioTotal}}</strong></p>
+                <p class="text-dark h6">CBM: <strong>{{metrosCubicos}} m³</strong></p>
+                <p class="text-dark h6">Peso: <strong>{{Peso}} kg</strong></p>
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+        <h3 class="text-center text-dark">ORDEN TEMPORAL {{Orden.Proveedor}}</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6" style="font-size: 12px;"><strong>Codigo</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Descripcion</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Posicion</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Modelo</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Cantidad</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio unitario</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each Productos}}
+                        <tr>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoT}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Descripcion}} </td>
+                            <td class=" cantidad h6" style="font-size: 11px;"> {{Posicion}} </td>
+                            <td class=" costo1 h6" style="font-size: 11px;"> {{Modelo}} </td>
+                            <td class=" costo2 h6" style="font-size: 11px;"> {{Cantidad}} </td>
+                            <td class=" costo2 h6" style="font-size: 11px;"> ${{PrecioUnidad}} </td>
+                            <td class=" costo2 h6" style="font-size: 11px;"> ${{PrecioTotal}} </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+        </div>
+    </main>
+    <script>    
+        window.print()
+    </script>
+</body>
+</html>

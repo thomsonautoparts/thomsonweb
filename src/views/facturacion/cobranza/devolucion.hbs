@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/facturacion-forms.css" />
+    <link rel="stylesheet" href="/css/select.css" />
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a href="/Facturacion">
+                    <img src="/css/assets/logo.png" alt="LOGO" width="150px" height="30px" id="logo" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facturación</a>
+                            <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="nav-link" href="/facturacion/nueva-factura">Nueva-factura</a></li>
+                                <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/por-cobrar">Por cobrar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cobradas">Cobradas</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ventas">Ventas</a></li> <!--Todas -->
+                                        <li><a class="nav-link" href="/facturacion/anular-factura">Anular</a></li>
+                                        <li><a class="nav-link" href="/facturacion/ordenes-compra">Orden de compra</a></li> <!--Pedidos de los clientes-->
+                                        <li><a class="nav-link" href="/facturacion/nueva-cotizacion">Cotización</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/ver-cotizaciones">Ver cotizaciones</a></li> 
+                                        <li><a class="nav-link" href="/facturacion/libro-contable">Libro contable</a></li> <!--Realizar cotizaciones sin afectar stock-->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Cobranza</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/cobranza">
+                                    <p class="name_product nav-link">Cobranza</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/devolucion">
+                                    <p class="name_product nav-link">Realizar Devolución</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todas-devoluciones">
+                                    <p class="name_product nav-link">Devoluciones</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/todos-recibos">
+                                    <p class="name_product nav-link">Recibos de pago</p>
+                                </a>
+                                <a class=" dropdown-item text-light" href="/facturacion/reporte-cxc">
+                                    <p class="name_product nav-link">Reporte de cuentas por cobrar</p>
+                                </a>
+                                
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Inventario</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-stock">
+                                    <p class="name_product nav-link">Crear Artículo</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/stock">
+                                    <p class="name_product nav-link">Editar Artículo</p>
+                                </a>
+                                      <a class=" dropdown-item text-light" href="/facturacion/registrar-garantias">
+                                    <p class="name_product nav-link">Registrar garantías</p>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/ver-garantias">
+                                    <p class="name_product nav-link">Ver garantías</p>
+                                </a>
+                                </a>
+                                    <a class=" dropdown-item text-light" href="/facturacion/estado-inventario">
+                                    <p class="name_product nav-link">Estado de inventario</p>
+                                </a>
+                                 <a class=" dropdown-item text-light" href="/facturacion/reporte-ajustes">
+                                    <p class="name_product nav-link">Reporte de movimientos</p>
+                                </a>
+                               <a class=" dropdown-item text-light" href="/facturacion/reporte-de-articulos">
+                                    <p class="name_product nav-link">Reporte de articulos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/cambio-masivo-costo">
+                                    <p class="name_product nav-link">Cambio masivo de costos</p>
+                                </a>
+                                  <a class=" dropdown-item text-light" href="/facturacion/reporte-stock">
+                                    <p class="name_product nav-link">Reporte de stock</p>
+                                </a>
+                                  <li class="dropdown-submenu"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Ajuste de inventario</a>
+                                    <ul class="dropdown-menu dark2 bg-dark">
+                                        <li><a class="nav-link" href="/facturacion/descargar-stock">Descargar</a></li>
+                                        <li><a class="nav-link" href="/facturacion/cargar-stock">Cargar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Proveedor</a>
+                                <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class=" dropdown-item text-light" href="/facturacion/crear-proveedor">
+                                        <p class="name_product nav-link">Crear</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/editar-proveedor">
+                                        <p class="name_product nav-link">Editar</p>
+                                    </a>
+                                        <a class="dropdown-item text-light" href="/facturacion/realizar-ordenes">
+                                        <p class="name_product nav-link">Realizar orden</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/ordenes-proveedor">
+                                        <p class="name_product nav-link">Lista de ordenes</p>
+                                    </a>
+                                    <a class="dropdown-item text-light" href="/facturacion/reporte-de-proveedores">
+                                        <p class="name_product nav-link">Reporte de proveedores</p>
+                                    </a>
+                                </ul>
+                            </li>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Cliente</a>
+                        <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                            <a class=" dropdown-item text-light" href="/facturacion/registrar-cliente">
+                                <p class="name_product nav-link">Registrar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/clientes">
+                                <p class="name_product nav-link">Editar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/aprobar-usuarios">
+                                <p class="name_product nav-link">Aprobar o rechazar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/pausar-activar-cliente">
+                                <p class="name_product nav-link">Pausar o activar</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reporte-cliente">
+                                <p class="name_product nav-link">Reportes</p>
+                            </a>
+                            <a class="dropdown-item text-light" href="/facturacion/reportes-precio">
+                                <p class="name_product nav-link">Lista de precios</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/solicitudes-recuperacion-contrasena">
+                                <p class="name_product nav-link">Solicitudes de recuperación</p>
+                            </a>
+                        </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Vendedor</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-vendedor">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/vendedores">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/reporte-vendedores">
+                                    <p class="name_product nav-link">Reportes</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-vendedor">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Transporte</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                               <a class=" dropdown-item text-light" href="/facturacion/registrar-transporte">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/transportes">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/activar-inactivar-transporte">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Registrar perfil</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class=" dropdown-item text-light" href="/facturacion/registrar-usuario">
+                                    <p class="name_product nav-link">Registrar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/usuarios">
+                                    <p class="name_product nav-link">Editar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/pausar-activar-usuario">
+                                    <p class="name_product nav-link">Pausar o activar</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Comisión</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/comision/por-cancelar">
+                                    <p class="name_product nav-link">Por cancelar</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/comision/canceladas">
+                                    <p class="name_product nav-link">Canceladas</p>
+                                </a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Administración</a>
+                                   <ul class="dropdown-menu dark2 bg-dark" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-light" href="/facturacion/administracion">
+                                    <p class="name_product nav-link">Libro de entradas y salidas</p>
+                                </a>
+                                <a class="dropdown-item text-light" href="/facturacion/cuentas-por-pagar">
+                                    <p class="name_product nav-link">Cuentas por pagar</p>
+                                </a>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/agenda">Agenda</a>
+                        </li>
+                        
+                         <li class="nav-item">
+                            <a class="nav-link" href="/facturacion/dashboard">Dashboard</a>
+                        </li>
+
+                    </ul>
+                       <ul class="navbar-nav ml-0 mr-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/usuarios/cerrar-sesion">
+                                    <button class="btn btn-outline-success" type="button">
+                                        Cerrar sesión
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+      <div hidden id="spinner"></div>
+        <div class="container-fluid">
+        {{#each errors}}
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{text}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {{/each}}
+        {{#each ok}}
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{text}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        {{/each}}
+        <div class="text-end mt-2">
+            <a href="/devolucion-por-monto" class="btn btn-warning">Devolución por monto</a>
+        </div>
+        <div class="card mt-2">
+            <div class="card">
+                 <div hidden id="spinner"></div>
+                <div class="card-header">
+                    <h4 class="text-dark text-center">Devolucion de productos</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="">Cliente</label>
+                            <select name="Cliente" id="Cliente" class="form-control js-exam">
+                                <option value="0">--Seleccione un cliente--</option>
+                                {{#each clientes}}
+                                    <option value="{{Empresa}}">{{Empresa}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="" class="text-dark">Facturas por cobrar:</label>
+                            <select name="Factura" id="Factura" class="form-control text-dark js-exam">
+                                <option value="0">--Seleccione una factura--</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="text-dark">Codigos</label>
+                            <select class="form-control text-dark js-exam" name="Codigo" id="Codigo">
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="text-dark">Cantidad</label>
+                            <input type="numer" name="Cantidad" class="form-control" id="Cantidad" min="1">
+                        </div>
+                        <div class="col-sm-1 mt-3">
+                            <button id="btnGuardar" class="btn text-dark w-100 btn-outline-success" style="margin-top: 4px;">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="table-responsive mt-2">
+            <table class="table table-dark table-striped table-hover table-sm">
+                <thead class="">
+                    <tr>
+                        <th class="text-center">Código</th>
+                        <th class="text-center">Cantidad</th>
+                        <th class="text-center">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTabla">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="text-end">
+            <button class="btn btn-warning" id="btnRegistrar">Registrar</button>
+        </div>
+
+        </div>
+
+
+    </main>
+
+
+
+<script src="/js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+const d = document,
+$btnRegistrar = d.getElementById("btnRegistrar"), 
+$factura = d.getElementById("Factura"),
+$Codigo = d.getElementById("Codigo"),
+$Cantidad = d.getElementById("Cantidad"),
+$bodyTabla = d.getElementById("bodyTabla"),
+$Cliente = d.getElementById("Cliente"),
+$btnGuardar = d.getElementById("btnGuardar")
+let arregloCodigos = []
+let factura
+
+// fetch para traer informacion 
+const solicitarFacturasCliente = async (data) => {
+    return await fetch("/solicitar-facturas-clientes-devolucion", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "Content-type": "application/json; charset=utf-8",
+    },
+    })
+    .then((response) => {
+        return response.json();
+    })
+    .then((response) => {
+            console.log(response)
+            let option = `<option value="0">--Seleccione una factura--</option>`
+            for(i=0; i< response.length; i++){
+                let opt = `<option value="${response[i].Factura}">${response[i].Factura}</option>`
+                option += opt
+            }
+            $factura.innerHTML = option
+        })
+    };
+const envioFactura = async (data) => {
+    return await fetch("/facturacion/info-productos", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "Content-type": "application/json; charset=utf-8",
+    },
+    })
+    .then((response) => {
+        return response.json();
+    })
+    .then((response) => {
+        let options = `<option>--Seleccione un codigo--</option>`  
+        for(i=0; i < response[0].Productos.length; i++){
+            options += `<option value="${response[0].Productos[i].Codigo}">${response[0].Productos[i].Codigo}</option>`
+        }
+        $Codigo.innerHTML = options
+
+        $Codigo.onchange = () => {
+            for(x=0 ; x < response[0].Productos.length; x++){
+                if(response[0].Productos[x].Codigo == $Codigo.value){
+                    $Cantidad.value = response[0].Productos[x].Cantidad
+                    $Cantidad.setAttribute("max", response[0].Productos[x].Cantidad)
+                }
+            }
+        }
+    });
+};
+
+$Cliente.onchange = () => {
+    if($Cliente.value != 0) {
+        let data = {
+            Cliente : $Cliente.value
+        }
+        solicitarFacturasCliente(data)
+    }
+}
+
+
+const envioDevolucion = async (data) => {
+return await fetch("/realizar-devolucion", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+    "Content-type": "application/json; charset=utf-8",
+    },
+})
+    .then((response) => {
+    return response.json();
+    })
+    .then((response) => {
+        window.open(`/ver-devolucion/${response.Recibo}`, `Recibo ${response.Recibo}`, "width=750,height=500");
+        location.reload()
+});
+};
+
+$factura.onchange = () => {
+    let datos = {
+        factura : $factura.value
+    }
+    envioFactura(datos)
+}
+
+
+$(document).ready(function () {
+$(".js-exam").select2();
+});
+
+d.addEventListener("click", e=> {
+if(e.target == $btnGuardar){
+    if($factura.value != 0 && $Codigo.value != 0 && $Cantidad.value != 0){
+    let validacion = arregloCodigos.find((data) => data == $Codigo.value)
+    factura = $factura.value
+    if(!validacion){
+        arregloCodigos.push($Codigo.value)
+        $factura.setAttribute("disabled","")
+        let tr = `
+        <tr>
+        <td class="text-center">${$Codigo.value}</td>
+        <td class="text-center">${$Cantidad.value}</td>
+        <td class="text-center"><button class="btn btn-danger">-</button></td>
+        </tr>
+        `
+        bodyTabla.innerHTML += tr
+    }else{
+        alert("Codigo ya registrado")
+    }
+    }
+}
+if(e.target.textContent == "-"){
+    let linea = e.target.parentElement.parentElement
+    bodyTabla.removeChild(linea)
+}
+if(e.target == $btnRegistrar){
+    let lineas = bodyTabla.children
+    let codigos = []
+    for(i=0; i< lineas.length; i++){
+    let codigo = {
+        CodigoT: lineas[i].children[0].textContent,
+        Cantidad:lineas[i].children[1].textContent
+    }
+    codigos.push(codigo)
+    } 
+    let data = {
+    Codigos: codigos,
+    Factura: factura,
+    }
+    envioDevolucion(data)
+}
+})
+
+
+    const $btnDevolver = document.getElementById("btnDevolver")
+    document.addEventListener("keydown", e => {
+        if(e.keyCode == 120 ){
+            window.open('/facturacion/acceso-directo-stock', 'Stock', "width=1400, heigh=100%")
+        }
+    })
+document.addEventListener("click", e=> {
+    if(e.target == $btnDevolver){
+        document.getElementById("spinner").removeAttribute("hidden")
+    }
+})
+    document.addEventListener("click", e  => {
+    if(e.target.getAttribute("type") == "submit"){
+        if(document.getElementById("spinner")){
+            document.getElementById("spinner").removeAttribute("hidden")
+        }
+    }
+})
+
+</script>
+
+<footer class="footer fixed-bottom" style="background-color: rgba(41, 41, 41, 0.99);">
+    <div class="container-fluid text-center mt-2">
+        <span class="text-muted">SISTEMA ADMINISTRATIVO THOMSON</span>
+    </div>
+</footer>
+</body>
+
+</html>

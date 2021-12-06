@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PAGOS - THOMSON</title>
+        <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+    <body class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <img src="/css/assets/logo.png" width="350" height="70" alt="THOMSON">
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div id="message">
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="text-dark text-center">PAGO FACTURA <strong id="Factura">#{{NumeroFactura}}</strong></h2>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead text-dark">Pendiente a pagar: <span class="text-danger">${{PendienteAPagar}}</span> </p>
+                            <input type="number" id="Amount" class="form-control" step="any" min="1" max="{{PendienteAPagar}}" placeholder="Introduce el monto a pagar">
+                            <p class="lead text-dark text-center">Los pagos por este medio tendran una recargar del 3% de su valor</p>
+                            <button type="submit" class="btn btn-warning" id="checkout-button">IR A REALIZAR PAGO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </body>
+  <script type="text/javascript">
+    // Create an instance of the Stripe object with your publishable API key
+    var stripe = Stripe("pk_live_51InQ04CuQ8FvLKlqUB68SqdNSTUnjWOzahmoVVHELtYK8JSkE6MRyen3UxacZjcbo611a3L5wexd9ew3iDD6Db4P00HOpS6JYv");
+    var checkoutButton = document.getElementById("checkout-button");
+    const $amount = document.getElementById("Amount")
+    const $factura = document.getElementById("Factura")
+    checkoutButton.addEventListener("click", function () {
+        if(!$amount.value || $amount.value == 0){
+            document.getElementById("message").innerHTML = `
+            <div class="mt-2 alert alert-danger alert-dismissible fade show" role="alert">
+               <p class="lead text-center">Tienen que introducir un monton mayor a cero y menor al valor pendiente a pagar.</p>   
+            </div>
+            `
+        }
+        else{
+            let purchase = {
+                value:  $amount.value,
+                Factura : $factura.textContent
+            };
+
+        fetch("/create-checkout-session", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(purchase)
+        })
+            .then(function (response) {
+            return response.json();
+            })
+            .then(function (session) {
+            return stripe.redirectToCheckout({ sessionId: session.id });
+            })
+            .then(function (result) {
+            if (result.error) {
+                alert(result.error.message);
+            }
+            })
+            .catch(function (error) {
+            console.error("Error:", error);
+            });
+            }
+    })
+  </script>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Thomson - Facturacion</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/facturacion-forms.css">
+    <link rel="stylesheet" href="/css/select.css" />
+    <!-- Favicons -->
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <main>
+        <div class="container-fluid mt-2">
+            <div class="card">
+                    <div class="card-header">
+                    <h4 class="text-dark text-center bg-light">Información producto
+                        <strong>{{stock.CodigoT}}</strong>
+                    </h4>
+                    <h6 style="color: transparent;" id="ID">{{stock._id}}</h6>
+                    </div>
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Codigo T:</label>
+                            <input type="text" readonly id="CodigoT" name="CodigoT" class="form-control"  value="{{stock.CodigoT}}"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Codigo G:</label>
+                            <input type="text" readonly id="CodigoG" class="form-control" name="CodigoG" value="{{stock.CodigoG}}"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Posicion:</label>
+                            <input type="text" readonly id="Posicion" name="Posicion"class="form-control" value="{{stock.Posicion}}" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Tipo producto:</label>
+                            <input type="text" readonly id="Posicion" name="Posicion"class="form-control" value="{{stock.TipoProducto}}" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Modelo poducto:</label>
+                            <input type="text" readonly id="Posicion" name="Posicion"class="form-control" value="{{stock.Familia}}" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Nombre:</label>
+                            <input type="text" readonly id="Posicion" name="Posicion"class="form-control" value="{{stock.Nombre}}" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="" class="text-dark">Alto:</label>
+                            <input type="number" readonly id="Alto" step="any" class="form-control" value="{{stock.Alto}}">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="" class="text-dark">Largo:</label>
+                            <input type="number" readonly id="Largo" step="any"  class="form-control" value="{{stock.Largo}}">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="" class="text-dark">Ancho:</label>
+                            <input type="number" readonly  id="Ancho" step="any" class="form-control"  value="{{stock.Ancho}}"> 
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="" class="text-dark">Unidades por bulto:</label>
+                            <input type="number" readonly id="Unidades" step="any" class="form-control"   value="{{stock.Unidades}}"> 
+                        </div>
+                        <div class="col-sm-1">
+                            <label for="" class="text-dark">Peso:</label>
+                            <input type="number" readonly id="Peso" step="any" class="form-control" value="{{stock.Peso}}">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="" class="text-dark">Costo FOB:</label>
+                            <input type="text" readonly name="costoFOB" id="costoFOB" step="any" class="form-control" value="{{stock.CostoFOB}}" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="" class="text-dark">Costo:</label>
+                            <input type="text" readonly id="costo" step="any" name="costo" class="form-control" value="{{stock.Costo}} ({{PorcentajeCosto}}%)" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="" class="text-dark">Costo gran mayor:</label>
+                            <input type="text" readonly id="costoGranMayor" step="any" name="costoGranMayor" class="form-control" value="{{stock.CostoGranMayor}} ({{PorcentajeCostoGranMayor}}%)" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="" class="text-dark">Costo Mayor:</label>
+                            <input type="text" readonly step="any" id="costoMayor" name="costoMayor" class="form-control" value="{{stock.CostoMayor}} ({{PorcentajeCostoMayor}}%)" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="" class="text-dark">Costo detal:</label>
+                            <input type="text" readonly step="any" id="costoDetal" name="costoDetal" class="form-control" value="{{stock.CostoDetal}} ({{PorcentajeCostoDetal}}%)" />
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+                  <div class="table-responsive mt-2">
+                <table id="tabla" class="table table-dark table-striped table-hover table-sm">
+                  <thead>
+                    <tr>
+                      <th>Tipo Vehiculo</th>
+                      <th>Marca</th>
+                      <th>Modelo</th>
+                      <th>Año</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bodyTabla">
+                      {{#each stock.Vehiculo}}
+                        <tr>
+                            <td>{{TipoVehiculo}}</td>
+                            <td>{{Marca}}</td>
+                            <td>{{Modelo}}</td>
+                            <td>{{Desde}}-{{Hasta}}</td>
+                        </tr>
+                      {{/each}}
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</body>
+
+</html>

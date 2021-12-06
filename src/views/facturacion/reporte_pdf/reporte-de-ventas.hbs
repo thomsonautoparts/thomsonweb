@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+        </div>
+        <h3 class="text-center text-dark">Reporte de ventas</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6" style="font-size: 12px;"><strong>Factura</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Fecha de registro</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Fecha de vencimiento</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Cliente</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Documento</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Productos</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Neto</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Saldo</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each facturas}}
+                        <tr>
+                            <td class="h6" style="font-size: 11px;">{{Factura}}</td>
+                            <td class="h6" style="font-size: 11px;">{{date}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Vencimiento}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Cliente}}</td>
+                            <td class="h6" style="font-size: 11px;">{{Documento}}</td>
+                            <td class="h6" style="font-size: 11px;">{{CantidadTotal}}</td>
+                            <td class="h6" style="font-size: 11px;">{{PrecioTotal}}</td>
+                            <td class="h6" style="font-size: 11px;">{{PendienteAPagar}}</td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td class="h6 text-end text-danger" colspan="5">Totales</td>
+                            <td class="h6">{{CantidadTotalGeneral}}</td>
+                            <td class="h6">{{PrecioTotalGeneral}}</td>
+                            <td class="h6">{{PendienteAPagarGeneral}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </main>
+    <script>
+        window.print()
+    </script>
+</body>
+
+</html>

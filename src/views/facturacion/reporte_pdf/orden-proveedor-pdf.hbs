@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body class="bg-light">
+    <main>
+        <div class="container-fluid">
+            <img src="/css/assets/logo_reporte.png" width="250px" height="50" alt="logo">
+            <p class="text-dark"><strong>CBM:</strong> <span>{{MCB}}m³</span></p>
+            <p class="text-dark"><strong>PESO:</strong> <span>{{peso}}kg</span></p>
+        </div>
+        <h3 class="text-center text-dark">{{Titulo}}</h1>
+        <div class="table-responsive">
+            <form action="/">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="">
+                        <tr>
+                            <th class="h6" style="font-size: 12px;"><strong>Codigo</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Homólogo</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Descripcion</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Posicion</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Modelo</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Cantidad</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio unitario</strong></th>
+                            <th class="h6" style="font-size: 12px;"><strong>Precio total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each productos}}
+                        <tr>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoT}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{CodigoG}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Descripcion}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Posicion}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{Modelo}} </td>
+                            <td class=" cantidad h6" style="font-size: 11px;"> {{Cantidad}} </td>
+                            <td class=" h6" style="font-size: 11px;"> {{PrecioUnidad}} </td>
+                            <td class=" costo2 h6" style="font-size: 11px;"> {{PrecioTotal}} </td>
+                        </tr>
+                        {{/each}}
+                           <tr>
+                                <td colspan="4" class=" h6"></td>
+                                <td class="text-end text-danger h6" style="font-size: 12px;">Total:</td>
+                                <td class=" h6" id="TotalCantidad" style="font-size: 12px;"></td>
+                                <td class=" h6"></td>
+                                <td class=" h6" id="TotalCosto2" style="font-size: 12px;"></td>
+                            </tr>
+
+                    </tbody>
+
+                </table>
+        </div>
+    </main>
+    <script>    
+        const d = document
+        const cantidad = d.querySelectorAll(".cantidad")
+        const costo1 = d.querySelectorAll(".costo1")
+        const costo2 = d.querySelectorAll(".costo2")
+        let totalcantidad = 0
+        let totalcosto1 = 0        
+        let totalcosto2 = 0        
+        for(i=0; i< cantidad.length; i++ ){
+            totalcantidad += +cantidad[i].textContent
+            totalcosto2 += +costo2[i].textContent
+            d.getElementById("TotalCantidad").textContent = totalcantidad
+            d.getElementById("TotalCosto2").textContent = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+          }).format(totalcosto2.toFixed(2))
+        }
+        window.print()
+    </script>
+</body>
+</html>
